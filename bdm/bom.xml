@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0" productVersion="7.12.1">
+    <businessObjects>
+        <businessObject qualifiedName="com.company.model.SFContract">
+            <description>a.id = c.getField("ContractNumber");
+a.idClient = c.getField("AccountId");
+a.idManager = c.getField("OwnerId")
+a.status = c.getField("Status")
+a.startDate = c.getField("StartDate");
+a.endDate = c.getField("EndDate");
+</description>
+            <fields>
+                <field type="STRING" length="255" name="id" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="idClient" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="idManager" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="status" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="startDate" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="endDate" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+    </businessObjects>
+</businessObjectModel>
