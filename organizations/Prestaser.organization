@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema/1.1" name="Prestaser" description="">
+  <customUserInfoDefinitions/>
+  <users>
+    <user userName="gc1@p.com">
+      <firstName>Áurea</firstName>
+      <lastName>GConta</lastName>
+      <manager></manager>
+      <personalData>
+        <email>gc1@p.com</email>
+      </personalData>
+      <professionalData>
+        <email>gc1@p.com</email>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="gc2@p.com">
+      <firstName>Henrique</firstName>
+      <lastName>GConta</lastName>
+      <manager></manager>
+      <personalData>
+        <email>gc2@p.com</email>
+      </personalData>
+      <professionalData>
+        <email>gc2@p.com</email>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="gs1@p.com">
+      <firstName>Marcelo</firstName>
+      <lastName>GServico</lastName>
+      <manager></manager>
+      <personalData>
+        <email>gs1@p.com</email>
+      </personalData>
+      <professionalData>
+        <email>gs1@p.com</email>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="gs2@p.com">
+      <firstName>Joana</firstName>
+      <lastName>GServico</lastName>
+      <manager></manager>
+      <personalData>
+        <email>gs2@p.com</email>
+      </personalData>
+      <professionalData>
+        <email>gs2@p.com</email>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="gs3@p.com">
+      <firstName>Carla</firstName>
+      <lastName>GServico</lastName>
+      <manager></manager>
+      <personalData>
+        <email>gs3@p.com</email>
+      </personalData>
+      <professionalData>
+        <email>gs3@p.com</email>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="t1@p.com">
+      <firstName>Eduarda</firstName>
+      <lastName>Tecnico (G:1)</lastName>
+      <manager>gs1@p.com</manager>
+      <personalData>
+        <email>t1@p.com</email>
+      </personalData>
+      <professionalData>
+        <email>t1@p.com</email>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="t2@p.com">
+      <firstName>Raimundo</firstName>
+      <lastName>Tecnico (G:1)</lastName>
+      <manager>gs1@p.com</manager>
+      <personalData>
+        <email>t2@p.com</email>
+      </personalData>
+      <professionalData>
+        <email>t2@p.com</email>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="t3@p.com">
+      <firstName>Fábio</firstName>
+      <lastName>Tecnico (G:1)</lastName>
+      <manager>gs1@p.com</manager>
+      <personalData>
+        <email>t3@p.com</email>
+      </personalData>
+      <professionalData>
+        <email>t3@p.com</email>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="t4@p.com">
+      <firstName>Emília</firstName>
+      <lastName>Tecnico (G:3)</lastName>
+      <manager>gs3@p.com</manager>
+      <personalData>
+        <email>t4@p.com</email>
+      </personalData>
+      <professionalData>
+        <email>t4@p.com</email>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="t5@p.com">
+      <firstName>Emanuel</firstName>
+      <lastName>Tecnico (G:2)</lastName>
+      <jobTitle></jobTitle>
+      <manager>gs2@p.com</manager>
+      <personalData>
+        <email>t5@p.com</email>
+      </personalData>
+      <professionalData>
+        <email>t5@p.com</email>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="c1@p.com">
+      <firstName>Guilherme</firstName>
+      <lastName>Contabilidade</lastName>
+      <manager></manager>
+      <personalData>
+        <email>c1@p.com</email>
+      </personalData>
+      <professionalData>
+        <email>c1@p.com</email>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="c2@p.com">
+      <firstName>Carla</firstName>
+      <lastName>Contabilidade</lastName>
+      <manager></manager>
+      <personalData>
+        <email>c2@p.com</email>
+      </personalData>
+      <professionalData>
+        <email>c2@p.com</email>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="a1@p.com">
+      <firstName>Leonor</firstName>
+      <lastName>Administrativo</lastName>
+      <manager></manager>
+      <personalData>
+        <email>a1@p.com</email>
+      </personalData>
+      <professionalData>
+        <email>a1@p.com</email>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="a2@p.com">
+      <firstName>Xavier</firstName>
+      <lastName>Administrativo</lastName>
+      <manager></manager>
+      <personalData>
+        <email>a2@p.com</email>
+      </personalData>
+      <professionalData>
+        <email>a2@p.com</email>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="gc3@p.com">
+      <firstName>Feliciano</firstName>
+      <lastName>GConta</lastName>
+      <manager></manager>
+      <personalData>
+        <email>gc3@p.com</email>
+      </personalData>
+      <professionalData>
+        <email>gc3@p.com</email>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+  </users>
+  <roles>
+    <role name="member">
+      <displayName>member</displayName>
+    </role>
+  </roles>
+  <groups>
+    <group name="gConta">
+      <displayName>Gestores de Conta</displayName>
+    </group>
+    <group name="gServico">
+      <displayName>Gestores de Serviço</displayName>
+    </group>
+    <group name="contabilidade">
+      <displayName>Contabilidade</displayName>
+    </group>
+    <group name="tecnico">
+      <displayName>Técnico</displayName>
+    </group>
+    <group name="admin">
+      <displayName>Administrativos</displayName>
+    </group>
+  </groups>
+  <memberships>
+    <membership>
+      <userName>gc1@p.com</userName>
+      <roleName>member</roleName>
+      <groupName>gConta</groupName>
+    </membership>
+    <membership>
+      <userName>gc2@p.com</userName>
+      <roleName>member</roleName>
+      <groupName>gConta</groupName>
+    </membership>
+    <membership>
+      <userName>gs1@p.com</userName>
+      <roleName>member</roleName>
+      <groupName>gServico</groupName>
+    </membership>
+    <membership>
+      <userName>gs2@p.com</userName>
+      <roleName>member</roleName>
+      <groupName>gServico</groupName>
+    </membership>
+    <membership>
+      <userName>gs3@p.com</userName>
+      <roleName>member</roleName>
+      <groupName>gServico</groupName>
+    </membership>
+    <membership>
+      <userName>t1@p.com</userName>
+      <roleName>member</roleName>
+      <groupName>tecnico</groupName>
+    </membership>
+    <membership>
+      <userName>t2@p.com</userName>
+      <roleName>member</roleName>
+      <groupName>tecnico</groupName>
+    </membership>
+    <membership>
+      <userName>t3@p.com</userName>
+      <roleName>member</roleName>
+      <groupName>tecnico</groupName>
+    </membership>
+    <membership>
+      <userName>t4@p.com</userName>
+      <roleName>member</roleName>
+      <groupName>tecnico</groupName>
+    </membership>
+    <membership>
+      <userName>t5@p.com</userName>
+      <roleName>member</roleName>
+      <groupName>tecnico</groupName>
+    </membership>
+    <membership>
+      <userName>c1@p.com</userName>
+      <roleName>member</roleName>
+      <groupName>contabilidade</groupName>
+    </membership>
+    <membership>
+      <userName>c2@p.com</userName>
+      <roleName>member</roleName>
+      <groupName>contabilidade</groupName>
+    </membership>
+    <membership>
+      <userName>a1@p.com</userName>
+      <roleName>member</roleName>
+      <groupName>admin</groupName>
+    </membership>
+    <membership>
+      <userName>a2@p.com</userName>
+      <roleName>member</roleName>
+      <groupName>admin</groupName>
+    </membership>
+    <membership>
+      <userName>gc3@p.com</userName>
+      <roleName>member</roleName>
+      <groupName>gConta</groupName>
+    </membership>
+  </memberships>
+</organization:Organization>
