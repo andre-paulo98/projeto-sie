@@ -130,7 +130,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_yPG_8cGQEeuAOfq-ASBkig" content=""/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_rdZS5MFUEeuAOfq-ASBkig">
-        <targetForm xmi:type="expression:Expression" xmi:id="_WfEL8MJKEeuFAa9v44krGA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_D0NH8MJNEeuFAa9v44krGA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_rdZS5sFUEeuAOfq-ASBkig">
         <targetForm xmi:type="expression:Expression" xmi:id="_rdZS58FUEeuAOfq-ASBkig" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -377,9 +377,6 @@
             <inputs xmi:type="process:ContractInput" xmi:id="_JaJFQsIXEeuFAa9v44krGA" name="email"/>
             <inputs xmi:type="process:ContractInput" xmi:id="_JaJFQ8IXEeuFAa9v44krGA" name="morada"/>
             <inputs xmi:type="process:ContractInput" xmi:id="_JaJFRMIXEeuFAa9v44krGA" name="telefone"/>
-            <inputs xmi:type="process:ContractInput" xmi:id="_JaJFRcIXEeuFAa9v44krGA" name="gestorConta" type="COMPLEX">
-              <inputs xmi:type="process:ContractInput" xmi:id="_JaJFRsIXEeuFAa9v44krGA" name="persistenceId_string"/>
-            </inputs>
             <inputs xmi:type="process:ContractInput" xmi:id="__t5mcMI3EeuFAa9v44krGA" name="valorContrato" type="DECIMAL">
               <mapping xmi:type="process:ContractInputMapping" xmi:id="__t5mccI3EeuFAa9v44krGA"/>
             </inputs>
@@ -482,7 +479,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_X-NcwMJFEeuFAa9v44krGA" content=""/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_wZxSJ8GUEeuAOfq-ASBkig">
-        <targetForm xmi:type="expression:Expression" xmi:id="_Wm3dEMJKEeuFAa9v44krGA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_D70y4MJNEeuFAa9v44krGA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_wZxSKcGUEeuAOfq-ASBkig">
         <targetForm xmi:type="expression:Expression" xmi:id="_wZxSKsGUEeuAOfq-ASBkig" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
