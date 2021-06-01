@@ -92,6 +92,24 @@ a.endDate = c.getField("EndDate");
             <queries/>
             <indexes/>
         </businessObject>
+        <businessObject qualifiedName="com.company.model.Reclamacao">
+            <fields>
+                <field type="STRING" length="255" name="id" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Cliente" fetchType="LAZY" name="cliente" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="tipo" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="assunto" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="descricao" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="estado" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="dataInicio" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="dataFim" nullable="true" collection="false"/>
+                <field type="DOUBLE" length="255" name="notaCredito" nullable="true" collection="false"/>
+                <field type="DOUBLE" length="255" name="valorCredito" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="origem" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
         <businessObject qualifiedName="com.company.model.Utilizador">
             <fields>
                 <field type="STRING" length="255" name="id" nullable="true" collection="false"/>
