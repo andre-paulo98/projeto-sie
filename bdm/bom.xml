@@ -25,7 +25,7 @@ if(s.getField("AnnualRevenue") != null) {&#13;
                 <field type="STRING" length="255" name="telefone" nullable="true" collection="false"/>
                 <field type="LOCALDATETIME" length="255" name="dataInicio" nullable="true" collection="false"/>
                 <field type="BOOLEAN" length="255" name="contrato" nullable="true" collection="false"/>
-                <relationField type="AGGREGATION" reference="com.company.model.Utilizador" fetchType="LAZY" name="gestorConta" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="gestorConta" nullable="true" collection="false"/>
                 <field type="DOUBLE" length="255" name="valorContrato" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
@@ -48,7 +48,7 @@ if(s.getField("AnnualRevenue") != null) {&#13;
             <fields>
                 <field type="STRING" length="255" name="id" nullable="true" collection="false"/>
                 <relationField type="AGGREGATION" reference="com.company.model.Pedido" fetchType="LAZY" name="pedido" nullable="true" collection="false"/>
-                <relationField type="AGGREGATION" reference="com.company.model.Utilizador" fetchType="LAZY" name="tecnico" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="tecnico" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="designacao" nullable="true" collection="false"/>
                 <field type="LOCALDATETIME" length="255" name="horaInicio" nullable="true" collection="false"/>
                 <field type="LOCALDATETIME" length="255" name="horaFim" nullable="true" collection="false"/>
@@ -80,16 +80,24 @@ a.endDate = c.getField("EndDate");
             <fields>
                 <field type="STRING" length="255" name="id" nullable="true" collection="false"/>
                 <relationField type="AGGREGATION" reference="com.company.model.Cliente" fetchType="LAZY" name="cliente" nullable="true" collection="false"/>
-                <relationField type="AGGREGATION" reference="com.company.model.Utilizador" fetchType="LAZY" name="administrativo" nullable="true" collection="false"/>
-                <relationField type="AGGREGATION" reference="com.company.model.Utilizador" fetchType="LAZY" name="gestorConta" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="administrativo" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="gestorServico" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="estado" nullable="true" collection="false"/>
-                <field type="LOCALDATETIME" length="255" name="dataIncio" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="dataInicio" nullable="true" collection="false"/>
                 <field type="LOCALDATETIME" length="255" name="dataFim" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="assunto" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="descricao" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
-            <queries/>
+            <queries>
+                <query name="findPedidosCliente" content="SELECT p &#10;FROM Pedido p &#10;WHERE p.cliente.persistenceId = :clienteId&#10;ORDER BY p.persistenceId ASC" returnType="java.util.List">
+                    <queryParameters>
+                        <queryParameter name="clienteId" className="java.lang.Long">
+                            <description>Id do cliente</description>
+                        </queryParameter>
+                    </queryParameters>
+                </query>
+            </queries>
             <indexes/>
         </businessObject>
         <businessObject qualifiedName="com.company.model.Reclamacao">
@@ -105,8 +113,16 @@ a.endDate = c.getField("EndDate");
                 <field type="DOUBLE" length="255" name="notaCredito" nullable="true" collection="false"/>
                 <field type="DOUBLE" length="255" name="valorCredito" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="origem" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Pedido" fetchType="LAZY" name="pedido" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="esclarecimento" nullable="true" collection="false"/>
             </fields>
-            <uniqueConstraints/>
+            <uniqueConstraints>
+                <uniqueConstraint name="id">
+                    <fieldNames>
+                        <fieldName>id</fieldName>
+                    </fieldNames>
+                </uniqueConstraint>
+            </uniqueConstraints>
             <queries/>
             <indexes/>
         </businessObject>

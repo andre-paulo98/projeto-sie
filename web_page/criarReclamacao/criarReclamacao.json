@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "criarReclamacao",
   "name" : "criarReclamacao",
-  "lastUpdate" : 1622476664553,
+  "lastUpdate" : 1622814006630,
   "rows" : [
     [
       {
@@ -179,7 +179,8 @@
                 },
                 "propertyValues" : {
                   "repeatedCollection" : {
-                    "type" : "variable"
+                    "type" : "variable",
+                    "value" : ""
                   },
                   "hidden" : {
                     "type" : "constant",
@@ -238,7 +239,7 @@
                         },
                         "placeholder" : {
                           "type" : "constant",
-                          "value" : "Select a Cliente"
+                          "value" : "Selecione um cliente"
                         },
                         "dimension" : {
                           "type" : "constant",
@@ -250,7 +251,7 @@
                         },
                         "required" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : true
                         },
                         "disabled" : {
                           "type" : "constant",
@@ -294,7 +295,7 @@
                         },
                         "required" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : true
                         },
                         "labelHidden" : {
                           "type" : "constant",
@@ -313,7 +314,8 @@
                           "value" : 1
                         },
                         "placeholder" : {
-                          "type" : "constant"
+                          "type" : "constant",
+                          "value" : "Selecione uma forma de contacto"
                         },
                         "availableValues" : {
                           "type" : "expression",
@@ -361,7 +363,7 @@
                         },
                         "required" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : true
                         },
                         "labelHidden" : {
                           "type" : "constant",
@@ -380,7 +382,8 @@
                           "value" : 1
                         },
                         "placeholder" : {
-                          "type" : "constant"
+                          "type" : "constant",
+                          "value" : ""
                         },
                         "availableValues" : {
                           "type" : "expression",
@@ -400,6 +403,73 @@
                         }
                       },
                       "reference" : "9fc445e1-1f67-4e4e-91b3-ca9d1dc06094",
+                      "hasValidationError" : false,
+                      "id" : "pbSelect"
+                    }
+                  ],
+                  [
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 12,
+                        "md" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "expression",
+                          "value" : "formInput.reclamacaoInput.tipo == 0"
+                        },
+                        "disabled" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "required" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Pedido"
+                        },
+                        "labelPosition" : {
+                          "type" : "constant",
+                          "value" : "top"
+                        },
+                        "labelWidth" : {
+                          "type" : "constant",
+                          "value" : 4
+                        },
+                        "placeholder" : {
+                          "type" : "interpolation",
+                          "value" : "Select an option"
+                        },
+                        "availableValues" : {
+                          "type" : "expression",
+                          "value" : "pedidos"
+                        },
+                        "displayedKey" : {
+                          "type" : "constant",
+                          "value" : "this-dataincio+\" - \"+this.assunto"
+                        },
+                        "returnedKey" : {
+                          "type" : "constant"
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "formInput.reclamacaoInput.pedido"
+                        }
+                      },
+                      "reference" : "126c1dd0-2852-42eb-9470-25dd45d87174",
                       "hasValidationError" : false,
                       "id" : "pbSelect"
                     }
@@ -459,71 +529,7 @@
                         },
                         "required" : {
                           "type" : "constant",
-                          "value" : false
-                        }
-                      },
-                      "reference" : "9a57e3ca-5508-4842-91f8-44acdfd8b17a",
-                      "hasValidationError" : false,
-                      "id" : "pbInput",
-                      "description" : ""
-                    }
-                  ],
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "hidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 1
-                        },
-                        "readOnly" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Descricao"
-                        },
-                        "placeholder" : {
-                          "type" : "constant"
-                        },
-                        "type" : {
-                          "type" : "constant",
-                          "value" : "text"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        },
-                        "value" : {
-                          "type" : "variable",
-                          "value" : "formInput.reclamacaoInput.descricao"
-                        },
-                        "required" : {
-                          "type" : "constant",
-                          "value" : false
+                          "value" : true
                         },
                         "minLength" : {
                           "type" : "constant",
@@ -544,10 +550,70 @@
                           "value" : 1
                         }
                       },
-                      "reference" : "50ee9f18-78b0-4582-b3b6-d8fd64fef8ce",
+                      "reference" : "9a57e3ca-5508-4842-91f8-44acdfd8b17a",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
+                    }
+                  ],
+                  [
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "md" : 12,
+                        "sm" : 12,
+                        "xs" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "readOnly" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "required" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "minLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "maxLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Descricao"
+                        },
+                        "labelPosition" : {
+                          "type" : "constant",
+                          "value" : "top"
+                        },
+                        "labelWidth" : {
+                          "type" : "constant",
+                          "value" : 1
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "formInput.reclamacaoInput.descricao"
+                        }
+                      },
+                      "reference" : "8c7ee59a-c2c1-4750-825e-34491771b140",
+                      "hasValidationError" : false,
+                      "id" : "pbTextarea"
                     }
                   ]
                 ]
@@ -720,6 +786,9 @@
         "    \"cliente\" : {",
         "      \"persistenceId_string\" : \"\"",
         "    },",
+        "    \"pedido\":{",
+        "        \"persistenceId_string\" : \"\"",
+        "    },",
         "    \"tipo\" : 0,",
         "    \"assunto\" : \"\",",
         "    \"descricao\" : \"\",",
@@ -779,16 +848,12 @@
       "value" : [
         "[",
         "    {",
-        "        \"label\": \"Intervenção\",",
+        "        \"label\": \"Faturação\",",
         "        \"value\": 0",
         "    },",
         "    {",
-        "        \"label\": \"Serviço\",",
+        "        \"label\": \"Pedido\",",
         "        \"value\": 1",
-        "    },",
-        "    {",
-        "        \"label\": \"Ambas\",",
-        "        \"value\": 2",
         "    }",
         "]"
       ],
@@ -811,6 +876,13 @@
         "        \"value\": \"Personally\"",
         "    }",
         "]"
+      ],
+      "exposed" : false
+    },
+    "pedidos" : {
+      "type" : "url",
+      "value" : [
+        "../API/bdm/businessData/com.company.model.Pedido?q=findPedidosCliente&p=0&c=10&f=clienteId={{formInput.reclamacaoInput.cliente.persistenceId}}"
       ],
       "exposed" : false
     }
