@@ -56,7 +56,26 @@ if(s.getField("AnnualRevenue") != null) {&#13;
                 <field type="STRING" length="255" name="duracao" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
-            <queries/>
+            <queries>
+                <query name="getAll" content="SELECT i &#13;&#10;FROM Intervencao i" returnType="java.util.List">
+                    <description>getAll</description>
+                    <queryParameters/>
+                </query>
+                <query name="getAbertas" content="SELECT i &#13;&#10;FROM Intervencao i &#13;&#10;WHERE i.estado != 'Completed'" returnType="java.util.List">
+                    <description>Intervenções Abertas</description>
+                    <queryParameters/>
+                </query>
+                <query name="getFechadas" content="SELECT i &#13;&#10;FROM Intervencao i &#13;&#10;WHERE  i.estado = 'Completed'" returnType="java.util.List">
+                    <description>Intervenções Completas</description>
+                    <queryParameters/>
+                </query>
+                <query name="getAbertasTecnico" content="SELECT i &#13;&#10;FROM Intervencao i &#13;&#10;WHERE i.tecnico = :tecnico&#13;&#10;AND i.estado = 'Completed'&#13;&#10;ORDER BY i.persistenceId ASC" returnType="java.util.List">
+                    <description>getAbertasTecnico</description>
+                    <queryParameters>
+                        <queryParameter name="tecnico" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+            </queries>
             <indexes/>
         </businessObject>
         <businessObject qualifiedName="com.company.model.LinhasFatura">
