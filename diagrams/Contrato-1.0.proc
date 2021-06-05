@@ -51,15 +51,15 @@
                 <expression xmi:type="expression:Expression" xmi:id="_9MvaycFaEeuAOfq-ASBkig" name="0" content="0" returnType="java.lang.Integer" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9MvaysFaEeuAOfq-ASBkig" key="query">
-                <expression xmi:type="expression:Expression" xmi:id="_9Mvay8FaEeuAOfq-ASBkig" name="&lt;pattern-expression>" content="SELECT Id, Name, Phone, CreatedDate, Contrato__c, &#x9;Email__c, BillingStreet, AnnualRevenue FROM Account" type="TYPE_PATTERN" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_9Mvay8FaEeuAOfq-ASBkig" name="&lt;pattern-expression>" content="SELECT Id, Name, Phone, CreatedDate, Contrato__c, &#x9;Email__c, BillingStreet, AnnualRevenue, GestorContaEmail__c FROM Account" type="TYPE_PATTERN" returnTypeFixed="true"/>
               </parameters>
             </configuration>
             <outputs xmi:type="expression:Operation" xmi:id="_9MvazMFaEeuAOfq-ASBkig">
               <leftOperand xmi:type="expression:Expression" xmi:id="_9MvazcFaEeuAOfq-ASBkig" name="listaClientes" content="listaClientes" type="TYPE_VARIABLE" returnType="java.util.List">
                 <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_FXvtQMFbEeuAOfq-ASBkig" name="listaClientes" multiple="true" dataType="_rdZTBMFUEeuAOfq-ASBkig" className="com.company.model.Cliente"/>
               </leftOperand>
-              <rightOperand xmi:type="expression:Expression" xmi:id="_9MvazsFaEeuAOfq-ASBkig" name="parseClients()" content="import com.company.model.Cliente&#xD;&#xA;import com.sforce.soap.partner.sobject.SObject&#xD;&#xA;&#xD;&#xA;import java.time.LocalDateTime&#xD;&#xA;import java.time.ZonedDateTime&#xD;&#xA;import java.util.logging.Logger&#xD;&#xA;import groovy.ui.SystemOutputInterceptor&#xD;&#xA;&#xD;&#xA;Logger logger = Logger.getLogger(&quot;org.bonitasoft&quot;)&#xD;&#xA;&#xD;&#xA;ArrayList&lt;Cliente> clientes = new ArrayList()&#xD;&#xA;&#xD;&#xA;SObject[] all = queryResults.getRecords()&#xD;&#xA;&#xD;&#xA;// SELECT Id, Name, Phone, CreatedDate, Contrato__c, &#x9;Email__c, BillingStreet, AnnualRevenue FROM Account&#xD;&#xA;&#xD;&#xA;for (SObject s in all) {&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;Cliente c = new Cliente()&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;c.id = s.getId()&#xD;&#xA;&#x9;c.nome = s.getField(&quot;Name&quot;)&#xD;&#xA;&#x9;c.email = s.getField(&quot;Email__c&quot;)&#xD;&#xA;&#x9;c.morada = s.getField(&quot;BillingStreet&quot;)&#xD;&#xA;&#x9;c.telefone = s.getField(&quot;Phone&quot;)&#xD;&#xA;&#x9;c.contrato = s.getField(&quot;Contrato__c&quot;)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;ZonedDateTime zdt = ZonedDateTime.parse(s.getField(&quot;CreatedDate&quot;))&#xD;&#xA;&#x9;c.dataInicio = zdt.toLocalDateTime()&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;if(s.getField(&quot;AnnualRevenue&quot;) != null) {&#xD;&#xA;&#x9;&#x9;c.valorContrato = Double.parseDouble(s.getField(&quot;AnnualRevenue&quot;))&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;c.valorContrato = 0&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;clientes.add(c)&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;return clientes" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-                <referencedElements xmi:type="definition:Output" xmi:id="_HHqHoMJLEeuFAa9v44krGA" name="queryResults" type="com.sforce.soap.partner.QueryResult"/>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_9MvazsFaEeuAOfq-ASBkig" name="parseClients()" content="import com.company.model.Cliente&#xD;&#xA;import com.sforce.soap.partner.sobject.SObject&#xD;&#xA;&#xD;&#xA;import java.time.LocalDateTime&#xD;&#xA;import java.time.ZonedDateTime&#xD;&#xA;import java.util.logging.Logger&#xD;&#xA;import groovy.ui.SystemOutputInterceptor&#xD;&#xA;&#xD;&#xA;Logger logger = Logger.getLogger(&quot;org.bonitasoft&quot;)&#xD;&#xA;&#xD;&#xA;ArrayList&lt;Cliente> clientes = new ArrayList()&#xD;&#xA;&#xD;&#xA;SObject[] all = queryResults.getRecords()&#xD;&#xA;&#xD;&#xA;// SELECT Id, Name, Phone, CreatedDate, Contrato__c, &#x9;Email__c, BillingStreet, AnnualRevenue FROM Account&#xD;&#xA;&#xD;&#xA;for (SObject s in all) {&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;Cliente c = new Cliente()&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;c.id = s.getId()&#xD;&#xA;&#x9;c.nome = s.getField(&quot;Name&quot;)&#xD;&#xA;&#x9;c.email = s.getField(&quot;Email__c&quot;)&#xD;&#xA;&#x9;c.morada = s.getField(&quot;BillingStreet&quot;)&#xD;&#xA;&#x9;c.telefone = s.getField(&quot;Phone&quot;)&#xD;&#xA;&#x9;c.contrato = s.getField(&quot;Contrato__c&quot;)&#xD;&#xA;&#x9;c.gestorConta = s.getField(&quot;GestorContaEmail__c&quot;)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;ZonedDateTime zdt = ZonedDateTime.parse(s.getField(&quot;CreatedDate&quot;))&#xD;&#xA;&#x9;c.dataInicio = zdt.toLocalDateTime()&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;if(s.getField(&quot;AnnualRevenue&quot;) != null) {&#xD;&#xA;&#x9;&#x9;c.valorContrato = Double.parseDouble(s.getField(&quot;AnnualRevenue&quot;))&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;c.valorContrato = 0&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;clientes.add(c)&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;return clientes" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+                <referencedElements xmi:type="definition:Output" xmi:id="_QkoX4MX6EeuztdCZqNo9aA" name="queryResults" type="com.sforce.soap.partner.QueryResult"/>
               </rightOperand>
               <operator xmi:type="expression:Operator" xmi:id="_9Mva0MFaEeuAOfq-ASBkig" type="ASSIGNMENT"/>
             </outputs>
@@ -130,7 +130,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_yPG_8cGQEeuAOfq-ASBkig" content=""/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_rdZS5MFUEeuAOfq-ASBkig">
-        <targetForm xmi:type="expression:Expression" xmi:id="_D0NH8MJNEeuFAa9v44krGA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_jGArkMX-EeuztdCZqNo9aA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_rdZS5sFUEeuAOfq-ASBkig">
         <targetForm xmi:type="expression:Expression" xmi:id="_rdZS58FUEeuAOfq-ASBkig" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -273,6 +273,12 @@
                     <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_b2VbU8I5EeuFAa9v44krGA" name="cliente" dataType="_rdZTBMFUEeuAOfq-ASBkig" className="com.company.model.Cliente"/>
                   </expressions>
                 </expressions>
+                <expressions xmi:type="expression:ListExpression" xmi:id="_iYVtQMX-EeuztdCZqNo9aA">
+                  <expressions xmi:type="expression:Expression" xmi:id="_iYVtQcX-EeuztdCZqNo9aA" name="GestorContaEmail__c" content="GestorContaEmail__c"/>
+                  <expressions xmi:type="expression:Expression" xmi:id="_iYVtQsX-EeuztdCZqNo9aA" name="cliente - Cliente#getGestorConta" content="getGestorConta" interpreter="GROOVY" type="TYPE_JAVA_METHOD_CALL">
+                    <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_iYVtQ8X-EeuztdCZqNo9aA" name="cliente" dataType="_rdZTBMFUEeuAOfq-ASBkig" className="com.company.model.Cliente"/>
+                  </expressions>
+                </expressions>
               </expression>
             </parameters>
           </configuration>
@@ -361,6 +367,18 @@
           </rightOperand>
           <operator xmi:type="expression:Operator" xmi:id="_Nr7LE8I5EeuFAa9v44krGA" type="JAVA_METHOD" expression="setValorContrato">
             <inputTypes>java.lang.Double</inputTypes>
+          </operator>
+        </operations>
+        <operations xmi:type="expression:Operation" xmi:id="_zcoxMMX9EeuztdCZqNo9aA">
+          <leftOperand xmi:type="expression:Expression" xmi:id="_zcoxMcX9EeuztdCZqNo9aA" name="cliente" content="cliente" type="TYPE_VARIABLE" returnType="com.company.model.Cliente">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_0AhhYMX9EeuztdCZqNo9aA" name="cliente" dataType="_rdZTBMFUEeuAOfq-ASBkig" className="com.company.model.Cliente"/>
+          </leftOperand>
+          <rightOperand xmi:type="expression:Expression" xmi:id="_zcoxMsX9EeuztdCZqNo9aA" name="getCurrentGestorContaEmail()" content="import java.util.logging.Logger&#xD;&#xA;&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(taskAssigneeId)&#xD;&#xA;&#xD;&#xA;Logger l = Logger.getLogger(&quot;a&quot;)&#xD;&#xA;&#xD;&#xA;return user.userName;&#xD;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+            <referencedElements xmi:type="expression:Expression" xmi:id="_WSXZ8MX-EeuztdCZqNo9aA" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+            <referencedElements xmi:type="expression:Expression" xmi:id="_WSXZ8cX-EeuztdCZqNo9aA" name="taskAssigneeId" content="taskAssigneeId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+          </rightOperand>
+          <operator xmi:type="expression:Operator" xmi:id="_zcoxM8X9EeuztdCZqNo9aA" type="JAVA_METHOD" expression="setGestorConta">
+            <inputTypes>java.lang.String</inputTypes>
           </operator>
         </operations>
         <loopCondition xmi:type="expression:Expression" xmi:id="_2XaVRMGUEeuAOfq-ASBkig" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
@@ -479,7 +497,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_X-NcwMJFEeuFAa9v44krGA" content=""/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_wZxSJ8GUEeuAOfq-ASBkig">
-        <targetForm xmi:type="expression:Expression" xmi:id="_D70y4MJNEeuFAa9v44krGA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_jMsiYMX-EeuztdCZqNo9aA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_wZxSKcGUEeuAOfq-ASBkig">
         <targetForm xmi:type="expression:Expression" xmi:id="_wZxSKsGUEeuAOfq-ASBkig" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
