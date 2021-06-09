@@ -94,12 +94,12 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="__AajQclnEeuKNrsWP8O9BA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="__AajQ8lnEeuKNrsWP8O9BA" name="" content="" returnTypeFixed="true"/>
           <correlation xmi:type="expression:TableExpression" xmi:id="_9lUo0MloEeuKNrsWP8O9BA"/>
-          <messageContent xmi:type="expression:Operation" xmi:id="_OQKOcMlpEeuKNrsWP8O9BA">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_OQLckclpEeuKNrsWP8O9BA" name="idPedido" content="idPedido" type="TYPE_VARIABLE" returnType="java.lang.Long">
-              <referencedElements xmi:type="process:Data" xmi:id="_iHAgQMltEeuKNrsWP8O9BA" name="idPedido" dataType="_V4H0r8icEeuFxoJfPFuilQ"/>
+          <messageContent xmi:type="expression:Operation" xmi:id="_sECCsMlwEeudmKdfol652Q">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_sEFGAclwEeudmKdfol652Q" name="idPedido" content="idPedido" type="TYPE_VARIABLE" returnType="java.lang.Long">
+              <referencedElements xmi:type="process:Data" xmi:id="_I-XEAMlxEeudmKdfol652Q" name="idPedido" dataType="_V4H0r8icEeuFxoJfPFuilQ"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_OQLckMlpEeuKNrsWP8O9BA" content="" returnType="java.lang.Long"/>
-            <operator xmi:type="expression:Operator" xmi:id="_OQKOcclpEeuKNrsWP8O9BA" type="ASSIGNMENT"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_sEFGAMlwEeudmKdfol652Q" name="pedidoId" content="pedidoId" returnType="java.lang.Long"/>
+            <operator xmi:type="expression:Operator" xmi:id="_sECCsclwEeudmKdfol652Q" type="ASSIGNMENT"/>
           </messageContent>
         </elements>
         <elements xmi:type="process:Task" xmi:id="_QSu_oMloEeuKNrsWP8O9BA" name="Acompanhar Pedido" outgoing="_W0KsUMloEeuKNrsWP8O9BA" incoming="_PXKvQMloEeuKNrsWP8O9BA" overrideActorsOfTheLane="false">
@@ -117,7 +117,7 @@
           <contract xmi:type="process:Contract" xmi:id="_QSvms8loEeuKNrsWP8O9BA"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_QSvmtsloEeuKNrsWP8O9BA" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:SendTask" xmi:id="_6efBcMltEeuKNrsWP8O9BA" name="Notificar Tecnico" outgoing="_8W7JwMltEeuKNrsWP8O9BA" incoming="_5U1RwMltEeuKNrsWP8O9BA" outgoingMessages="_0q7R8MluEeuKNrsWP8O9BA">
+        <elements xmi:type="process:SendTask" xmi:id="_6efBcMltEeuKNrsWP8O9BA" name="Notificar Tecnico" outgoing="_8W7JwMltEeuKNrsWP8O9BA" incoming="_5U1RwMltEeuKNrsWP8O9BA" outgoingMessages="_u8Em0MlwEeudmKdfol652Q">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_5UvyMcltEeuKNrsWP8O9BA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_5UvyMMltEeuKNrsWP8O9BA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_5UvyMsltEeuKNrsWP8O9BA" name="" content="" returnTypeFixed="true"/>
@@ -130,8 +130,8 @@
             <correlation xmi:type="process:Correlation" xmi:id="_0q3AgcluEeuKNrsWP8O9BA">
               <correlationAssociation xmi:type="expression:TableExpression" xmi:id="_0q3AgsluEeuKNrsWP8O9BA"/>
             </correlation>
-            <targetProcessExpression xmi:type="expression:Expression" xmi:id="_0q3Ag8luEeuKNrsWP8O9BA" name="Tecnico" content="Tecnico" returnTypeFixed="true"/>
-            <targetElementExpression xmi:type="expression:Expression" xmi:id="_0q3AhMluEeuKNrsWP8O9BA" name="Start2" content="Start2" returnTypeFixed="true"/>
+            <targetProcessExpression xmi:type="expression:Expression" xmi:id="_u8A8cMlwEeudmKdfol652Q" name="Tecnico" content="Tecnico"/>
+            <targetElementExpression xmi:type="expression:Expression" xmi:id="_u8CxoMlwEeudmKdfol652Q" name="Start2" content="Start2"/>
             <messageContent xmi:type="expression:TableExpression" xmi:id="_0q3AhcluEeuKNrsWP8O9BA">
               <expressions xmi:type="expression:ListExpression" xmi:id="_0q3AhsluEeuKNrsWP8O9BA">
                 <expressions xmi:type="expression:Expression" xmi:id="_0q3Ah8luEeuKNrsWP8O9BA" name="idTecnico" content="idTecnico" returnTypeFixed="true"/>
@@ -229,7 +229,7 @@
     </elements>
     <elements xmi:type="process:Pool" xmi:id="_k2kd0MltEeuKNrsWP8O9BA" name="Tecnico">
       <elements xmi:type="process:Lane" xmi:id="_lUdTsMltEeuKNrsWP8O9BA" name="Lane1" actor="_xuKbUMltEeuKNrsWP8O9BA">
-        <elements xmi:type="process:StartMessageEvent" xmi:id="_3YW-AMltEeuKNrsWP8O9BA" name="Start2" event="novoPedido" incomingMessag="_0q7R8MluEeuKNrsWP8O9BA">
+        <elements xmi:type="process:StartMessageEvent" xmi:id="_3YW-AMltEeuKNrsWP8O9BA" name="Start2" event="novoPedido" incomingMessag="_u8Em0MlwEeudmKdfol652Q">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_3YXlEMltEeuKNrsWP8O9BA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_3YW-AcltEeuKNrsWP8O9BA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_3YXlEcltEeuKNrsWP8O9BA" name="" content="" returnTypeFixed="true"/>
@@ -296,7 +296,7 @@
     <datatypes xmi:type="process:JavaType" xmi:id="_V4H0ssicEeuFxoJfPFuilQ" name="Java_object"/>
     <datatypes xmi:type="process:XMLType" xmi:id="_V4H0s8icEeuFxoJfPFuilQ" name="XML"/>
     <datatypes xmi:type="process:BusinessObjectType" xmi:id="_V4H0tMicEeuFxoJfPFuilQ" name="Business_Object"/>
-    <messageConnections xmi:type="process:MessageFlow" xmi:id="_0q7R8MluEeuKNrsWP8O9BA" name="novoPedido" target="_3YW-AMltEeuKNrsWP8O9BA" source="_6efBcMltEeuKNrsWP8O9BA"/>
+    <messageConnections xmi:type="process:MessageFlow" xmi:id="_u8Em0MlwEeudmKdfol652Q" name="novoPedido" target="_3YW-AMltEeuKNrsWP8O9BA" source="_6efBcMltEeuKNrsWP8O9BA"/>
   </process:MainProcess>
   <notation:Diagram xmi:id="_V4H0tcicEeuFxoJfPFuilQ" type="Process" element="_V4H0gMicEeuFxoJfPFuilQ" name="MyDiagram" measurementUnit="Pixel">
     <children xmi:type="notation:Node" xmi:id="_V4H0tsicEeuFxoJfPFuilQ" type="2007" element="_V4H0gcicEeuFxoJfPFuilQ">
@@ -449,12 +449,12 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8W7w0sltEeuKNrsWP8O9BA" points="[0, -9, -107, -6]$[104, -18, -3, -15]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8W8-8MltEeuKNrsWP8O9BA" id="(1.0,0.56)"/>
     </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_0q75AMluEeuKNrsWP8O9BA" type="4002" element="_0q7R8MluEeuKNrsWP8O9BA" source="_6efogMltEeuKNrsWP8O9BA" target="_3YYMIMltEeuKNrsWP8O9BA" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_0q8gEMluEeuKNrsWP8O9BA" type="6003">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_0q8gEcluEeuKNrsWP8O9BA" y="-10"/>
+    <edges xmi:type="notation:Connector" xmi:id="_u8FN4MlwEeudmKdfol652Q" type="4002" element="_u8Em0MlwEeudmKdfol652Q" source="_6efogMltEeuKNrsWP8O9BA" target="_3YYMIMltEeuKNrsWP8O9BA" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_u8FN48lwEeudmKdfol652Q" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_u8FN5MlwEeudmKdfol652Q" y="-10"/>
       </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_0q75AcluEeuKNrsWP8O9BA" fontName="Noto Sans"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0q75AsluEeuKNrsWP8O9BA" points="[-48, 25, 385, -216]$[-48, 53, 385, -188]$[-437, 53, -4, -188]$[-437, 226, -4, -15]"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_u8FN4clwEeudmKdfol652Q" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_u8FN4slwEeudmKdfol652Q" points="[-45, 25, 388, -216]$[-420, 233, 13, -8]"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>
