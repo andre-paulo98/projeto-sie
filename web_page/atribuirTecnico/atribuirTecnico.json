@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "atribuirTecnico",
   "name" : "atribuirTecnico",
-  "lastUpdate" : 1623277264056,
+  "lastUpdate" : 1623368526143,
   "rows" : [
     [
       {
@@ -96,6 +96,18 @@
                 "dimension" : {
                   "type" : "constant",
                   "value" : 12
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 4
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : true
                 }
               },
               "reference" : "b76bfbb3-adcc-4ad1-9def-d6337da506d2",
@@ -136,6 +148,162 @@
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "labelHidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "label" : {
+                    "type" : "interpolation",
+                    "value" : "Assunto"
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 4
+                  },
+                  "allowHTML" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "text" : {
+                    "type" : "interpolation",
+                    "value" : "{{ pedido.assunto }}"
+                  },
+                  "alignment" : {
+                    "type" : "constant",
+                    "value" : "left"
+                  }
+                },
+                "reference" : "4b9f078c-0e2d-48d3-9dc1-ce868387f0bc",
+                "hasValidationError" : false,
+                "id" : "pbText"
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "labelHidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "label" : {
+                    "type" : "interpolation",
+                    "value" : "Descrição"
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 4
+                  },
+                  "allowHTML" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "text" : {
+                    "type" : "interpolation",
+                    "value" : "{{pedido.descricao}}"
+                  },
+                  "alignment" : {
+                    "type" : "constant",
+                    "value" : "left"
+                  }
+                },
+                "reference" : "c5e7be4c-838d-4f58-b434-7c83593ae53c",
+                "hasValidationError" : false,
+                "id" : "pbText"
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "labelHidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "label" : {
+                    "type" : "interpolation",
+                    "value" : "Data de Ínicio"
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 4
+                  },
+                  "allowHTML" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "text" : {
+                    "type" : "interpolation",
+                    "value" : "{{pedido.dataInicio}}"
+                  },
+                  "alignment" : {
+                    "type" : "constant",
+                    "value" : "left"
+                  }
+                },
+                "reference" : "12422d3a-f02a-45a9-8fae-9d6de09f6d07",
+                "hasValidationError" : false,
+                "id" : "pbText"
+              }
+            ],
             [
               {
                 "type" : "component",
@@ -429,6 +597,13 @@
       "type" : "url",
       "value" : [
         "../API/system/session/1"
+      ],
+      "exposed" : false
+    },
+    "pedido" : {
+      "type" : "url",
+      "value" : [
+        "../{{context.pedido_ref.link}}"
       ],
       "exposed" : false
     }

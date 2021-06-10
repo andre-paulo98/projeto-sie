@@ -1,8 +1,8 @@
 {
   "modelVersion" : "2.0",
-  "id" : "newForm1",
-  "name" : "newForm1",
-  "lastUpdate" : 1623283125650,
+  "id" : "registarIntervencoes",
+  "name" : "registarIntervencoes",
+  "lastUpdate" : 1623359861067,
   "rows" : [
     [
       {
@@ -11,7 +11,7 @@
           "xs" : 12
         },
         "propertyValues" : { },
-        "reference" : "88dac799-1f37-4f43-809f-f0d4df38d1bc",
+        "reference" : "b224ba54-b692-4fb8-ac82-703d27944b81",
         "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [
@@ -50,7 +50,7 @@
                   "value" : 12
                 }
               },
-              "reference" : "a59600db-d6e6-4469-876d-c2b0deac5464",
+              "reference" : "1d9495fa-752b-42cc-8175-f07cf65eb70e",
               "hasValidationError" : false,
               "id" : "pbTitle",
               "description" : ""
@@ -98,7 +98,7 @@
                   "value" : 12
                 }
               },
-              "reference" : "94031f3f-d16b-4b3d-960f-9b862bec5e30",
+              "reference" : "84699fff-d067-4bab-9714-299ff911e053",
               "hasValidationError" : false,
               "id" : "pbText",
               "description" : ""
@@ -114,7 +114,7 @@
           "xs" : 12
         },
         "propertyValues" : { },
-        "reference" : "def6e57a-fb58-4a7b-bec9-66093b9973ac",
+        "reference" : "fed0db82-bed1-4af9-86d6-064a6f1e03f0",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
         "container" : {
@@ -123,7 +123,7 @@
             "xs" : 12
           },
           "propertyValues" : { },
-          "reference" : "6bf1c858-39da-4213-ba1d-d2a5e2f36736",
+          "reference" : "691d492c-eedb-4906-9f1a-60bd883d6e9c",
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
@@ -162,7 +162,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "7b895f31-675c-4bcc-b95d-c4fb269b634a",
+                "reference" : "ba1e1063-af2e-45a4-b5aa-d2bcb952026d",
                 "hasValidationError" : false,
                 "id" : "pbTitle",
                 "description" : ""
@@ -180,7 +180,7 @@
                 "propertyValues" : {
                   "repeatedCollection" : {
                     "type" : "variable",
-                    "value" : "intervencoes"
+                    "value" : "formInput.intervencoesInput"
                   },
                   "hidden" : {
                     "type" : "constant",
@@ -195,255 +195,10 @@
                     "value" : 12
                   }
                 },
-                "reference" : "4aa81407-7323-4aa0-814e-a12e581de82f",
+                "reference" : "5c2580c3-4624-4880-8831-64d051bbeae5",
                 "hasValidationError" : false,
                 "id" : "pbContainer",
                 "rows" : [
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "allowHtml" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "hidden" : {
-                          "type" : "expression",
-                          "value" : "!$item.id"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Id"
-                        },
-                        "text" : {
-                          "type" : "interpolation",
-                          "value" : "{{$item.id}}"
-                        },
-                        "alignment" : {
-                          "type" : "constant",
-                          "value" : "left"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        }
-                      },
-                      "reference" : "0e5ad2fc-fcb3-4073-91fe-af8552837389",
-                      "hasValidationError" : false,
-                      "id" : "pbText",
-                      "description" : ""
-                    }
-                  ],
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "allowHtml" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "hidden" : {
-                          "type" : "expression",
-                          "value" : "!$item.tecnico"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Tecnico"
-                        },
-                        "text" : {
-                          "type" : "interpolation",
-                          "value" : "{{$item.tecnico}}"
-                        },
-                        "alignment" : {
-                          "type" : "constant",
-                          "value" : "left"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        }
-                      },
-                      "reference" : "accfd8ed-3a8f-46e5-94d7-5c7afd683c7c",
-                      "hasValidationError" : false,
-                      "id" : "pbText",
-                      "description" : ""
-                    }
-                  ],
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "allowHtml" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "hidden" : {
-                          "type" : "expression",
-                          "value" : "!$item.designacao"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Designacao"
-                        },
-                        "text" : {
-                          "type" : "interpolation",
-                          "value" : "{{$item.designacao}}"
-                        },
-                        "alignment" : {
-                          "type" : "constant",
-                          "value" : "left"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        }
-                      },
-                      "reference" : "f4c2b57c-e729-4dce-8944-28f3f8f733ed",
-                      "hasValidationError" : false,
-                      "id" : "pbText",
-                      "description" : ""
-                    }
-                  ],
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "allowHtml" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "hidden" : {
-                          "type" : "expression",
-                          "value" : "!$item.horaInicio"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Hora Inicio"
-                        },
-                        "text" : {
-                          "type" : "interpolation",
-                          "value" : "{{$item.horaInicio|uiDate}}"
-                        },
-                        "alignment" : {
-                          "type" : "constant",
-                          "value" : "left"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        }
-                      },
-                      "reference" : "7b3ad418-4655-40c2-9b09-9989d4a1cfff",
-                      "hasValidationError" : false,
-                      "id" : "pbText",
-                      "description" : ""
-                    }
-                  ],
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "allowHtml" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "hidden" : {
-                          "type" : "expression",
-                          "value" : "!$item.horaFim"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Hora Fim"
-                        },
-                        "text" : {
-                          "type" : "interpolation",
-                          "value" : "{{$item.horaFim|uiDate}}"
-                        },
-                        "alignment" : {
-                          "type" : "constant",
-                          "value" : "left"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        }
-                      },
-                      "reference" : "1e03f79a-79f3-485b-8e1f-72c7059122ab",
-                      "hasValidationError" : false,
-                      "id" : "pbText",
-                      "description" : ""
-                    }
-                  ],
                   [
                     {
                       "type" : "component",
@@ -480,7 +235,7 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Estado"
+                          "value" : "Designacao"
                         },
                         "placeholder" : {
                           "type" : "constant"
@@ -495,14 +250,14 @@
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : "$item.estado"
+                          "value" : "$item.designacao"
                         },
                         "required" : {
                           "type" : "constant",
                           "value" : false
                         }
                       },
-                      "reference" : "03e6177d-b26d-412a-a74e-2ed918cccfee",
+                      "reference" : "4af6b494-e4bb-4264-be5d-63112db0e717",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -518,42 +273,193 @@
                         "lg" : 12
                       },
                       "propertyValues" : {
-                        "allowHtml" : {
+                        "showNow" : {
                           "type" : "constant",
                           "value" : true
                         },
-                        "labelHidden" : {
+                        "hidden" : {
                           "type" : "constant",
                           "value" : false
                         },
-                        "hidden" : {
-                          "type" : "expression",
-                          "value" : "!$item.duracao"
+                        "inlineInput" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "dateFormat" : {
+                          "type" : "constant",
+                          "value" : "MM/dd/yyyy"
                         },
                         "cssClasses" : {
                           "type" : "constant",
                           "value" : ""
                         },
+                        "labelWidth" : {
+                          "type" : "constant",
+                          "value" : 1
+                        },
+                        "readOnly" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Duracao"
+                          "value" : "Hora Inicio"
                         },
-                        "text" : {
-                          "type" : "interpolation",
-                          "value" : "{{$item.duracao}}"
+                        "type" : {
+                          "type" : "constant"
                         },
-                        "alignment" : {
+                        "required" : {
                           "type" : "constant",
-                          "value" : "left"
+                          "value" : false
+                        },
+                        "todayLabel" : {
+                          "type" : "constant",
+                          "value" : "Today"
+                        },
+                        "timePlaceholder" : {
+                          "type" : "constant",
+                          "value" : "Enter a time (h:mm:ss a)"
+                        },
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "showToday" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "labelPosition" : {
+                          "type" : "constant",
+                          "value" : "top"
+                        },
+                        "timeFormat" : {
+                          "type" : "constant",
+                          "value" : "h:mm:ss a"
+                        },
+                        "placeholder" : {
+                          "type" : "constant",
+                          "value" : "Enter a date (mm/dd/yyyy)"
+                        },
+                        "nowLabel" : {
+                          "type" : "constant",
+                          "value" : "Now"
                         },
                         "dimension" : {
                           "type" : "constant",
                           "value" : 12
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "$item.horaInicio"
+                        },
+                        "withTimeZone" : {
+                          "type" : "constant",
+                          "value" : false
                         }
                       },
-                      "reference" : "19516e20-0b49-464c-a15f-296fecc2ed8f",
+                      "reference" : "c109d406-4cbc-4999-b82d-42b01dff3c6e",
                       "hasValidationError" : false,
-                      "id" : "pbText",
+                      "id" : "pbDateTimePicker",
+                      "description" : ""
+                    }
+                  ],
+                  [
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "md" : 12,
+                        "sm" : 12,
+                        "xs" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "showNow" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "inlineInput" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "dateFormat" : {
+                          "type" : "constant",
+                          "value" : "MM/dd/yyyy"
+                        },
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "labelWidth" : {
+                          "type" : "constant",
+                          "value" : 1
+                        },
+                        "readOnly" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Hora Fim"
+                        },
+                        "type" : {
+                          "type" : "constant"
+                        },
+                        "required" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "todayLabel" : {
+                          "type" : "constant",
+                          "value" : "Today"
+                        },
+                        "timePlaceholder" : {
+                          "type" : "constant",
+                          "value" : "Enter a time (h:mm:ss a)"
+                        },
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "showToday" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "labelPosition" : {
+                          "type" : "constant",
+                          "value" : "top"
+                        },
+                        "timeFormat" : {
+                          "type" : "constant",
+                          "value" : "h:mm:ss a"
+                        },
+                        "placeholder" : {
+                          "type" : "constant",
+                          "value" : "Enter a date (mm/dd/yyyy)"
+                        },
+                        "nowLabel" : {
+                          "type" : "constant",
+                          "value" : "Now"
+                        },
+                        "dimension" : {
+                          "type" : "constant",
+                          "value" : 12
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "$item.horaFim"
+                        },
+                        "withTimeZone" : {
+                          "type" : "constant",
+                          "value" : false
+                        }
+                      },
+                      "reference" : "03ab603e-d844-478c-bdd7-9e9848736a22",
+                      "hasValidationError" : false,
+                      "id" : "pbDateTimePicker",
                       "description" : ""
                     }
                   ],
@@ -625,7 +531,7 @@
                           "value" : 12
                         }
                       },
-                      "reference" : "ca84a9c6-5115-4b8c-b9ab-4d1b410089d7",
+                      "reference" : "9df05ce3-23fe-4908-bd89-93c4284ef597",
                       "hasValidationError" : false,
                       "id" : "pbButton",
                       "description" : ""
@@ -682,11 +588,11 @@
                   },
                   "collectionToModify" : {
                     "type" : "variable",
-                    "value" : "intervencoes"
+                    "value" : "formInput.intervencoesInput"
                   },
                   "valueToAdd" : {
                     "type" : "expression",
-                    "value" : "{\n  \"persistenceId_string\" : \"\",\n  \"id\" : \"\",\n  \"tecnico\" : \"\",\n  \"designacao\" : \"\",\n  \"horaInicio\" : null,\n  \"horaFim\" : null,\n  \"estado\" : \"\",\n  \"duracao\" : \"\"\n}"
+                    "value" : "{\n  \"persistenceId_string\" : \"\",\n  \"designacao\" : \"\",\n  \"horaInicio\" : null,\n  \"horaFim\" : null\n}"
                   },
                   "disabled" : {
                     "type" : "constant",
@@ -701,7 +607,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "fa520832-9844-4194-83c5-95195250f6b5",
+                "reference" : "03ce4fd5-fb06-4206-844a-5005b7a140d8",
                 "hasValidationError" : false,
                 "id" : "pbButton",
                 "description" : ""
@@ -778,7 +684,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "df6a290b-205b-4619-8e9a-3d4ddaf90ae2",
+                "reference" : "614e4da9-f12b-4b6d-b0a2-3eb41d2cc593",
                 "hasValidationError" : false,
                 "id" : "pbButton",
                 "description" : ""
@@ -830,7 +736,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "9222d5eb-8bb0-4f5f-84cc-c0e7e06654a3",
+                "reference" : "bb6262c7-5aef-43a6-b617-e375e623c721",
                 "hasValidationError" : false,
                 "id" : "pbText",
                 "description" : ""
@@ -843,14 +749,14 @@
   ],
   "assets" : [
     {
-      "id" : "af86a6c9-ca87-45e3-ad31-14b54eb51c45",
+      "id" : "39762e71-5180-4834-9ec8-d748721cfc53",
       "name" : "style.css",
       "type" : "css",
       "order" : 0,
       "external" : false
     },
     {
-      "id" : "3e00e171-aceb-476d-94dc-85a7e0a5c5c3",
+      "id" : "5e3ad98a-88e6-4f48-a900-195e2b67a204",
       "name" : "localization.json",
       "type" : "json",
       "order" : 0,
@@ -863,6 +769,15 @@
       "type" : "url",
       "value" : [
         "../API/bpm/userTask/{{taskId}}"
+      ],
+      "exposed" : false
+    },
+    "formInput" : {
+      "type" : "json",
+      "value" : [
+        "{",
+        "  \"intervencoesInput\" : [ ]",
+        "}"
       ],
       "exposed" : false
     },
@@ -884,14 +799,8 @@
     "formOutput" : {
       "type" : "expression",
       "value" : [
-        "if( $data.intervencoes ){",
-        "\treturn {",
-        "\t\t//map intervencoes variable to expected task contract input",
-        "\t\tintervencoesInput: $data.intervencoes.map( it => ({",
-        "\t\t\tpersistenceId_string: it.persistenceId_string !== undefined ? it.persistenceId_string : null,",
-        "\t\t\testado: it.estado !== undefined ? it.estado : null",
-        "\t\t}))",
-        "\t}",
+        "return {",
+        "\tintervencoesInput: $data.formInput.intervencoesInput",
         "}"
       ],
       "exposed" : false
@@ -900,13 +809,6 @@
       "type" : "url",
       "value" : [
         "../API/bpm/userTask/{{taskId}}/context"
-      ],
-      "exposed" : false
-    },
-    "intervencoes" : {
-      "type" : "url",
-      "value" : [
-        "../{{context.intervencoes_ref.link}}"
       ],
       "exposed" : false
     },
@@ -919,7 +821,7 @@
     }
   },
   "hasValidationError" : false,
-  "uuid" : "ca68fb57-de29-45d6-b695-4d42a2fe7615",
+  "uuid" : "9bcd110e-abf5-476c-be88-6e659132d1d3",
   "type" : "form",
   "description" : "Page generated with Bonita UI designer"
 }
