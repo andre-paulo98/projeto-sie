@@ -123,6 +123,15 @@
               </rightOperand>
               <operator xmi:type="expression:Operator" xmi:id="_DVYJq8luEeudmKdfol652Q" type="ASSIGNMENT"/>
             </outputs>
+            <outputs xmi:type="expression:Operation" xmi:id="_6ieIUMoXEeu1NdeQ74KRdg">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_6ieIUcoXEeu1NdeQ74KRdg" name="pedido" content="pedido" type="TYPE_VARIABLE" returnType="com.company.model.Pedido">
+                <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_6ieIUsoXEeu1NdeQ74KRdg" name="pedido" dataType="_a5Za9MkEEeu4ybFjAWImeQ" className="com.company.model.Pedido"/>
+              </leftOperand>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_6ieIU8oXEeu1NdeQ74KRdg" name="LocalDateTimeNow()" content="import java.time.LocalDateTime&#xD;&#xA;&#xD;&#xA;return LocalDateTime.now()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.time.LocalDateTime"/>
+              <operator xmi:type="expression:Operator" xmi:id="_6ieIVMoXEeu1NdeQ74KRdg" type="JAVA_METHOD" expression="setDataInicio">
+                <inputTypes>java.time.LocalDateTime</inputTypes>
+              </operator>
+            </outputs>
           </connectors>
           <operations xmi:type="expression:Operation" xmi:id="_7EewSckGEeu4ybFjAWImeQ">
             <leftOperand xmi:type="expression:Expression" xmi:id="_7EewSskGEeu4ybFjAWImeQ" name="pedido" content="pedido" type="TYPE_VARIABLE" returnType="com.company.model.Pedido">
@@ -336,7 +345,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_tevNgcltEeudmKdfol652Q" content="" returnType="java.lang.Long"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_a5Za1MkEEeu4ybFjAWImeQ">
-        <targetForm xmi:type="expression:Expression" xmi:id="_96fJ0MoTEeuNjvtW7AOS9A" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_8B4FkMoXEeu1NdeQ74KRdg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_a5Za1skEEeu4ybFjAWImeQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_a5Za18kEEeu4ybFjAWImeQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -508,7 +517,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_yMFGIcoMEeuZ_J39tiYXpQ" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_lYiNEMoKEeuZ_J39tiYXpQ">
-        <targetForm xmi:type="expression:Expression" xmi:id="_9hhQMMoTEeuNjvtW7AOS9A" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_7lkkEMoXEeu1NdeQ74KRdg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_lYiNEsoKEeuZ_J39tiYXpQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_lYiNE8oKEeuZ_J39tiYXpQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
