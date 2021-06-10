@@ -146,17 +146,18 @@
                 <expression xmi:type="expression:Expression" xmi:id="_jl3deb_JEeuw7s4QN7J5OA" name="0" content="0" returnType="java.lang.Integer" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_jl3der_JEeuw7s4QN7J5OA" key="query">
-                <expression xmi:type="expression:Expression" xmi:id="_jl3de7_JEeuw7s4QN7J5OA" name="&lt;pattern-expression>" content="SELECT AccountNumber, Name, Phone, Contrato__c, Email__c, CreatedDate FROM Account" type="TYPE_PATTERN" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_jl3de7_JEeuw7s4QN7J5OA" name="&lt;pattern-expression>" content="SELECT Id, Name, Phone, CreatedDate, Contrato__c, &#x9;Email__c, BillingStreet, AnnualRevenue, GestorContaEmail__c FROM Account" type="TYPE_PATTERN" returnTypeFixed="true"/>
               </parameters>
             </configuration>
             <outputs xmi:type="expression:Operation" xmi:id="_jl3dfL_JEeuw7s4QN7J5OA">
               <leftOperand xmi:type="expression:Expression" xmi:id="_jl3dfb_JEeuw7s4QN7J5OA" name="listaClientes" content="listaClientes" type="TYPE_VARIABLE" returnType="java.util.List">
                 <referencedElements xmi:type="process:BusinessObjectData" xmi:id="__JyFYL_JEeuw7s4QN7J5OA" name="listaClientes" multiple="true" dataType="_Ms3ppLViEeuW5de44GffAA" className="com.company.model.Cliente"/>
               </leftOperand>
-              <rightOperand xmi:type="expression:Expression" xmi:id="_jl3df7_JEeuw7s4QN7J5OA" name="mapClientes()" content="import java.util.logging.Logger&#xA;&#xA;import com.company.model.Cliente&#xA;import com.sforce.soap.partner.sobject.SObject&#xA;&#xA;import groovy.ui.SystemOutputInterceptor&#xA;&#xA;ArrayList&lt;Cliente> clientes = new ArrayList()&#xA;&#xA;SObject[] all = queryResults.getRecords()&#xA;&#xA;&#xA;// SELECT Id, Name, PersonEmail, BillingAddress, Phone, CreatedDate, IsPartner FROM Account&#xA;&#xA;for (SObject s in all) {&#xA;&#x9;&#xA;&#x9;Cliente c = new Cliente()&#xA;&#x9;&#xA;&#x9;c.id = s.getId()&#xA;&#x9;c.nome = s.getField(&quot;Name&quot;)&#xA;&#x9;c.email = s.getField(&quot;Email__c&quot;)&#xA;&#x9;c.morada = s.getField(&quot;BillingStreet&quot;)&#xA;&#x9;c.telefone = s.getField(&quot;Phone&quot;)&#xA;&#x9;c.gestorConta = &quot;gc1@p.com&quot;&#xA;&#x9;c.contrato = s.getField(&quot;Contrato__c&quot;)&#xA;&#x9;&#xA;&#x9;&#xA;&#x9;clientes.add(c)&#xA;}&#xA;&#xA;return clientes" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-                <referencedElements xmi:type="definition:Output" xmi:id="_JL2_oMPuEeuJAcXamjN_Mg" name="queryResults" type="com.sforce.soap.partner.QueryResult"/>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_jl3df7_JEeuw7s4QN7J5OA" name="mapClientes()" content="import java.time.ZonedDateTime&#xA;import java.util.logging.Logger&#xA;&#xA;import com.company.model.Cliente&#xA;import com.sforce.soap.partner.sobject.SObject&#xA;&#xA;import groovy.ui.SystemOutputInterceptor&#xA;&#xA;ArrayList&lt;Cliente> clientes = new ArrayList()&#xA;&#xA;SObject[] all = queryResults.getRecords()&#xA;&#xA;// SELECT Id, Name, PersonEmail, BillingAddress, Phone, CreatedDate, IsPartner FROM Account&#xA;&#xA;for (SObject s in all) {&#xA;&#x9;&#xA;&#x9;def lista = clienteDAO.findById(s.getId(),0,1);&#xA;&#x9;Cliente c;&#xA;&#x9;&#xA;&#x9;if(lista.empty){&#xA;&#x9;&#x9;c = new Cliente();&#xA;&#x9;}else{&#xA;&#x9;&#x9;c = lista.get(0);&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;c.id = s.getId()&#xA;&#x9;c.nome = s.getField(&quot;Name&quot;)&#xA;&#x9;c.email = s.getField(&quot;Email__c&quot;)&#xA;&#x9;c.morada = s.getField(&quot;BillingStreet&quot;)&#xA;&#x9;c.telefone = s.getField(&quot;Phone&quot;)&#xA;&#x9;c.contrato = s.getField(&quot;Contrato__c&quot;)&#xA;&#x9;c.gestorConta = s.getField(&quot;GestorContaEmail__c&quot;)&#xA;&#x9;&#xA;&#x9;ZonedDateTime zdt = ZonedDateTime.parse(s.getField(&quot;CreatedDate&quot;))&#xA;&#x9;c.dataInicio = zdt.toLocalDateTime()&#xA;&#x9;&#xA;&#x9;if(s.getField(&quot;AnnualRevenue&quot;) != null) {&#xA;&#x9;&#x9;c.valorContrato = Double.parseDouble(s.getField(&quot;AnnualRevenue&quot;))&#xA;&#x9;} else {&#xA;&#x9;&#x9;c.valorContrato = 0&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;&#xA;&#x9;clientes.add(c)&#xA;}&#xA;&#xA;return clientes" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+                <referencedElements xmi:type="definition:Output" xmi:id="_otvgcMotEeuNjvtW7AOS9A" name="queryResults" type="com.sforce.soap.partner.QueryResult"/>
+                <referencedElements xmi:type="expression:Expression" xmi:id="_otvgccotEeuNjvtW7AOS9A" name="clienteDAO" content="clienteDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.ClienteDAO" returnTypeFixed="true"/>
               </rightOperand>
-              <operator xmi:type="expression:Operator" xmi:id="_jl4EcL_JEeuw7s4QN7J5OA" type="ASSIGNMENT"/>
+              <operator xmi:type="expression:Operator" xmi:id="_jl4EcL_JEeuw7s4QN7J5OA" type="CREATE_BUSINESS_DATA"/>
             </outputs>
           </connectors>
           <operations xmi:type="expression:Operation" xmi:id="_ZEK4scIYEeuQdqAq9r9VZA">
@@ -175,11 +176,11 @@
             <leftOperand xmi:type="expression:Expression" xmi:id="_ZEK4ucIYEeuQdqAq9r9VZA" name="reclamacao" content="reclamacao" type="TYPE_VARIABLE" returnType="com.company.model.Reclamacao">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ZEK4usIYEeuQdqAq9r9VZA" name="reclamacao" dataType="_Ms3ppLViEeuW5de44GffAA" className="com.company.model.Reclamacao"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_ZEK4u8IYEeuQdqAq9r9VZA" name="reclamacaoInput.tipo" content="reclamacaoInput?.tipo" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_Y66v4MI1EeujHpDkxERCVg" name="reclamacaoInput" type="COMPLEX"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_ZEK4u8IYEeuQdqAq9r9VZA" name="reclamacaoInput.tipo" content="reclamacaoInput?.tipo" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_w9zXUMobEeuNjvtW7AOS9A" name="reclamacaoInput" type="COMPLEX"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_ZEK4vcIYEeuQdqAq9r9VZA" type="JAVA_METHOD" expression="setTipo">
-              <inputTypes>java.lang.String</inputTypes>
+              <inputTypes>java.lang.Integer</inputTypes>
             </operator>
           </operations>
           <operations xmi:type="expression:Operation" xmi:id="_ZEK4vsIYEeuQdqAq9r9VZA">
@@ -228,7 +229,7 @@
             <leftOperand xmi:type="expression:Expression" xmi:id="_laNBQcIYEeuQdqAq9r9VZA" name="reclamacao" content="reclamacao" type="TYPE_VARIABLE" returnType="com.company.model.Reclamacao">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_l25kUMIYEeuQdqAq9r9VZA" name="reclamacao" dataType="_Ms3ppLViEeuW5de44GffAA" className="com.company.model.Reclamacao"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_laNBQsIYEeuQdqAq9r9VZA" name="Aberto" content="Open" interpreter="GROOVY"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_laNBQsIYEeuQdqAq9r9VZA" name="Aberto" content="Aberto" interpreter="GROOVY"/>
             <operator xmi:type="expression:Operator" xmi:id="_laNBQ8IYEeuQdqAq9r9VZA" type="JAVA_METHOD" expression="setEstado">
               <inputTypes>java.lang.String</inputTypes>
             </operator>
@@ -258,7 +259,7 @@
               <inputs xmi:type="process:ContractInput" xmi:id="_ZEKRocIYEeuQdqAq9r9VZA" name="cliente" type="COMPLEX">
                 <inputs xmi:type="process:ContractInput" xmi:id="_ZEKRosIYEeuQdqAq9r9VZA" name="persistenceId_string"/>
               </inputs>
-              <inputs xmi:type="process:ContractInput" xmi:id="_ZEKRo8IYEeuQdqAq9r9VZA" name="tipo">
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZEKRo8IYEeuQdqAq9r9VZA" name="tipo" type="INTEGER">
                 <inputs xmi:type="process:ContractInput" xmi:id="_r3ZNYMOoEeuvSI2P2wUajg" name="input1">
                   <mapping xmi:type="process:ContractInputMapping" xmi:id="_r3ZNYcOoEeuvSI2P2wUajg"/>
                 </inputs>
@@ -520,8 +521,8 @@
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_R3szMMOSEeuQ0NkI11gVUA" name="reclamacao" dataType="_Ms3ppLViEeuW5de44GffAA" className="com.company.model.Reclamacao"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_Rhi9AsOSEeuQ0NkI11gVUA" name="initReclamacao()" content="reclamacaoDAO.findByPersistenceId(reclamacaoId)" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Reclamacao">
-              <referencedElements xmi:type="expression:Expression" xmi:id="_nkJ4kMOSEeuQ0NkI11gVUA" name="reclamacaoDAO" content="reclamacaoDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.ReclamacaoDAO" returnTypeFixed="true"/>
-              <referencedElements xmi:type="process:Data" xmi:id="_nkJ4kcOSEeuQ0NkI11gVUA" name="reclamacaoId" dataType="_Ms3pn7ViEeuW5de44GffAA"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_DTQ7oMowEeuNjvtW7AOS9A" name="reclamacaoDAO" content="reclamacaoDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.ReclamacaoDAO" returnTypeFixed="true"/>
+              <referencedElements xmi:type="process:Data" xmi:id="_DTQ7ocowEeuNjvtW7AOS9A" name="reclamacaoId" dataType="_Ms3pn7ViEeuW5de44GffAA"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_Rhi9A8OSEeuQ0NkI11gVUA" type="ASSIGNMENT"/>
           </operations>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
   <process:MainProcess xmi:id="_ezqDcMoNEeuZ_J39tiYXpQ" name="TratarPedido" author="andre" bonitaVersion="7.12.1" bonitaModelVersion="7.12.0-004">
-    <elements xmi:type="process:Pool" xmi:id="_ezqDccoNEeuZ_J39tiYXpQ" name="TratarPedio">
+    <elements xmi:type="process:Pool" xmi:id="_ezqDccoNEeuZ_J39tiYXpQ" name="TratarPedido">
       <elements xmi:type="process:Lane" xmi:id="_ezqDcsoNEeuZ_J39tiYXpQ" name="Tecnico" actor="_uVMevMoNEeuZ_J39tiYXpQ">
         <elements xmi:type="process:ServiceTask" xmi:id="_uVL3ssoNEeuZ_J39tiYXpQ" name="Marcar serviço como iniciado" outgoing="_uVO698oNEeuZ_J39tiYXpQ" incoming="_uVOT4MoNEeuZ_J39tiYXpQ">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_uVL3s8oNEeuZ_J39tiYXpQ" name="" content="" returnTypeFixed="true"/>

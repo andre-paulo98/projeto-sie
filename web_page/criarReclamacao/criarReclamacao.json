@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "criarReclamacao",
   "name" : "criarReclamacao",
-  "lastUpdate" : 1622814006630,
+  "lastUpdate" : 1623359919736,
   "rows" : [
     [
       {
@@ -455,7 +455,7 @@
                         },
                         "availableValues" : {
                           "type" : "expression",
-                          "value" : "pedidos"
+                          "value" : "t"
                         },
                         "displayedKey" : {
                           "type" : "constant",
@@ -816,7 +816,7 @@
     "cliente_query" : {
       "type" : "url",
       "value" : [
-        "../API/bdm/businessData/com.company.model.Cliente?q=find&p=0&c=99"
+        "../{{context.listaClientes_ref.link}}"
       ],
       "exposed" : false
     },
@@ -882,7 +882,16 @@
     "pedidos" : {
       "type" : "url",
       "value" : [
-        "../API/bdm/businessData/com.company.model.Pedido?q=findPedidosCliente&p=0&c=10&f=clienteId={{formInput.reclamacaoInput.cliente.persistenceId}}"
+        "../API/bdm/businessData/com.company.model.Pedido?q=findPedidosCliente&p=0&c=10&f=clienteId={{formInput.reclamacaoInput.cliente.id}}"
+      ],
+      "exposed" : false
+    },
+    "t" : {
+      "type" : "expression",
+      "value" : [
+        "const lista = $data.pedidos",
+        "console.error(lista)",
+        "return lista"
       ],
       "exposed" : false
     }
