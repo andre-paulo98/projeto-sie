@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "PaginaPrincipal",
   "name" : "PaginaPrincipal",
-  "lastUpdate" : 1623440236010,
+  "lastUpdate" : 1623455014397,
   "rows" : [
     [
       {
@@ -120,7 +120,15 @@
     }
   ],
   "inactiveAssets" : [ ],
-  "variables" : { },
+  "variables" : {
+    "user" : {
+      "type" : "url",
+      "value" : [
+        "../API/system/session/1"
+      ],
+      "exposed" : false
+    }
+  },
   "hasValidationError" : false,
   "uuid" : "ca73ce24-e7eb-45f9-bf52-bb91b41b4a00",
   "type" : "page",
