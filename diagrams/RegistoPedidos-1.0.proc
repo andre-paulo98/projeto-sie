@@ -519,9 +519,8 @@
             <leftOperand xmi:type="expression:Expression" xmi:id="_R_KdccoyEeuNjvtW7AOS9A" name="pedido" content="pedido" type="TYPE_VARIABLE" returnType="com.company.model.Pedido">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_SY0TkMoyEeuNjvtW7AOS9A" name="pedido" dataType="_a5Za9MkEEeu4ybFjAWImeQ" className="com.company.model.Pedido"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_R_KdcsoyEeuNjvtW7AOS9A" name="setTecnico-EstadoOcupado()" content="import java.util.logging.Logger&#xD;&#xA;&#xD;&#xA;import org.bonitasoft.engine.identity.UserUpdater&#xD;&#xA;&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUserByUserName(tecnicoSelecionado.userName)&#xD;&#xA;&#xD;&#xA;UserUpdater userUpdater = new UserUpdater()&#xD;&#xA;userUpdater.setJobTitle(&quot;OCUPADO&quot;)&#xD;&#xA;apiAccessor.getIdentityAPI().updateUser(user.id, userUpdater)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;return tecnicoSelecionado.userName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_l7tcQMqyEeucl8x9Z98WNg" name="tecnicoSelecionado" dataType="_a5Za8skEEeu4ybFjAWImeQ" className="org.bonitasoft.engine.identity.User"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_l7tcQcqyEeucl8x9Z98WNg" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_R_KdcsoyEeuNjvtW7AOS9A" name="tecnicoSelecionado.userName" content="tecnicoSelecionado.userName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_-EoMIMr2EeuVH99PbiCVIw" name="tecnicoSelecionado" dataType="_a5Za8skEEeu4ybFjAWImeQ" className="org.bonitasoft.engine.identity.User"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_R_Kdc8oyEeuNjvtW7AOS9A" type="JAVA_METHOD" expression="setTecnico">
               <inputTypes>java.lang.String</inputTypes>

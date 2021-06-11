@@ -23,7 +23,7 @@
                 <expression xmi:type="expression:Expression" xmi:id="_kpFBIsIqEeujHpDkxERCVg" name="localhost" content="localhost" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_kpFBI8IqEeujHpDkxERCVg" key="smtpPort">
-                <expression xmi:type="expression:Expression" xmi:id="_kpFBJMIqEeujHpDkxERCVg" name="25" content="25" returnType="java.lang.Integer" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_kpFBJMIqEeujHpDkxERCVg" name="2525" content="2525" returnType="java.lang.Integer" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_kpFBJcIqEeujHpDkxERCVg" key="sslSupport">
                 <expression xmi:type="expression:Expression" xmi:id="_kpFBJsIqEeujHpDkxERCVg" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
@@ -741,21 +741,14 @@
                 <expression xmi:type="expression:Expression" xmi:id="_S_M49MiXEeuBtealUS_d3w" name="true" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
               </parameters>
             </configuration>
-            <outputs xmi:type="expression:Operation" xmi:id="_hAvOtsrAEeu6IdNbI3qhYg">
-              <leftOperand xmi:type="expression:Expression" xmi:id="_hAvOt8rAEeu6IdNbI3qhYg" content=""/>
-              <rightOperand xmi:type="expression:Expression" xmi:id="_hAvOuMrAEeu6IdNbI3qhYg" name="resultset" content="resultset" type="CONNECTOR_OUTPUT_TYPE" returnType="java.sql.ResultSet">
-                <referencedElements xmi:type="definition:Output" xmi:id="_hAvOucrAEeu6IdNbI3qhYg" name="resultset" type="java.sql.ResultSet"/>
-              </rightOperand>
-              <operator xmi:type="expression:Operator" xmi:id="_hAvOusrAEeu6IdNbI3qhYg" type="ASSIGNMENT"/>
-            </outputs>
           </connectors>
           <operations xmi:type="expression:Operation" xmi:id="_tfOz4Mq5Eeu6IdNbI3qhYg">
             <leftOperand xmi:type="expression:Expression" xmi:id="_tfOz4cq5Eeu6IdNbI3qhYg" name="reclamacao" content="reclamacao" type="TYPE_VARIABLE" returnType="com.company.model.Reclamacao">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_t5DpIMq5Eeu6IdNbI3qhYg" name="reclamacao" dataType="_Ms3ppLViEeuW5de44GffAA" className="com.company.model.Reclamacao"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_tfOz4sq5Eeu6IdNbI3qhYg" name="newScript()" content="reclamacaoDAO.findByPersistenceId(reclamacaoId)" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Reclamacao">
-              <referencedElements xmi:type="expression:Expression" xmi:id="_wjRzsMq5Eeu6IdNbI3qhYg" name="reclamacaoDAO" content="reclamacaoDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.ReclamacaoDAO" returnTypeFixed="true"/>
-              <referencedElements xmi:type="process:Data" xmi:id="_wjRzscq5Eeu6IdNbI3qhYg" name="reclamacaoId" dataType="_Ms3pn7ViEeuW5de44GffAA"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_tfOz4sq5Eeu6IdNbI3qhYg" name="newScript()" content="import java.util.logging.Logger&#xA;&#xA;Logger.getLogger(&quot;asda&quot;).severe(&quot;DEBUG1: &quot;+reclamacaoId)&#xA;reclamacaoDAO.findByPersistenceId(reclamacaoId)" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Reclamacao">
+              <referencedElements xmi:type="process:Data" xmi:id="_ODVx8Mr_EeuVH99PbiCVIw" name="reclamacaoId" dataType="_Ms3pn7ViEeuW5de44GffAA"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_ODVx8cr_EeuVH99PbiCVIw" name="reclamacaoDAO" content="reclamacaoDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.ReclamacaoDAO" returnTypeFixed="true"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_tfOz48q5Eeu6IdNbI3qhYg" type="ASSIGNMENT"/>
           </operations>
@@ -775,7 +768,7 @@
                 <expression xmi:type="expression:Expression" xmi:id="_I7zH48VCEeueOpryaN2BRQ" name="localhost" content="localhost" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_I7zH5MVCEeueOpryaN2BRQ" key="smtpPort">
-                <expression xmi:type="expression:Expression" xmi:id="_I7zH5cVCEeueOpryaN2BRQ" name="25" content="25" returnType="java.lang.Integer" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_I7zH5cVCEeueOpryaN2BRQ" name="2525" content="2525" returnType="java.lang.Integer" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_I7zH5sVCEeueOpryaN2BRQ" key="sslSupport">
                 <expression xmi:type="expression:Expression" xmi:id="_I7zH58VCEeueOpryaN2BRQ" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
@@ -1246,7 +1239,7 @@
             </children>
             <children xmi:type="notation:Shape" xmi:id="_q_k98MOPEeuQ0NkI11gVUA" type="3025" element="_q_jIwMOPEeuQ0NkI11gVUA" fontName="Noto Sans" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_q_llAMOPEeuQ0NkI11gVUA" type="5011"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q_k98cOPEeuQ0NkI11gVUA" x="686" y="78" width="155" height="79"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q_k98cOPEeuQ0NkI11gVUA" x="686" y="78" width="140" height="70"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_Ms3ps7ViEeuW5de44GffAA"/>
@@ -1350,7 +1343,7 @@
             </children>
             <children xmi:type="notation:Shape" xmi:id="_zzlxiMVhEeueOpryaN2BRQ" type="3027" element="_zzlKcMVhEeueOpryaN2BRQ" fontName="Noto Sans" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_zzlxisVhEeueOpryaN2BRQ" type="5017"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zzlxicVhEeueOpryaN2BRQ" x="781" y="22" width="172" height="86"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zzlxicVhEeueOpryaN2BRQ" x="781" y="22" width="153" height="77"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_bh1WQcU_EeueOpryaN2BRQ"/>
@@ -1380,7 +1373,7 @@
             </children>
             <children xmi:type="notation:Shape" xmi:id="_wV-vWcI5EeujHpDkxERCVg" type="3005" element="_wV-IQMI5EeujHpDkxERCVg" fontName="Noto Sans" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_wV_WYMI5EeujHpDkxERCVg" type="5005"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wV-vWsI5EeujHpDkxERCVg" x="116" y="26" width="120" height="60"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wV-vWsI5EeujHpDkxERCVg" x="116" y="26" width="132" height="66"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_q-cA4MJPEeuaEO-pxtDUtw" type="3062" element="_q-ZkoMJPEeuaEO-pxtDUtw" fontName="Noto Sans">
               <children xmi:type="notation:DecorationNode" xmi:id="_q-cA4sJPEeuaEO-pxtDUtw" type="5090">

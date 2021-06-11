@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "selectClient",
   "name" : "selectClient",
-  "lastUpdate" : 1623238994174,
+  "lastUpdate" : 1623428662182,
   "rows" : [
     [
       {
@@ -202,14 +202,16 @@
                 "reference" : "95740687-6819-4c93-b9c1-848b6e646072",
                 "hasValidationError" : false,
                 "id" : "pbSelect"
-              },
+              }
+            ],
+            [
               {
                 "type" : "component",
                 "dimension" : {
                   "xs" : 12,
                   "sm" : 12,
-                  "md" : 1,
-                  "lg" : 6
+                  "md" : 12,
+                  "lg" : 12
                 },
                 "propertyValues" : {
                   "cssClasses" : {
@@ -226,7 +228,7 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "+"
+                    "value" : "Registar Novo Cliente"
                   },
                   "alignment" : {
                     "type" : "constant",
