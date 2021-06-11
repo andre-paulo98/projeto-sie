@@ -75,6 +75,11 @@ if(s.getField("AnnualRevenue") != null) {&#13;
                         <queryParameter name="tecnico" className="java.lang.String"/>
                     </queryParameters>
                 </query>
+                <query name="findByPedido" content="SELECT i &#13;&#10;FROM Intervencao i &#13;&#10;WHERE i.pedido.id = :pedidoId&#13;&#10;ORDER BY i.persistenceId ASC" returnType="java.util.List">
+                    <queryParameters>
+                        <queryParameter name="pedidoId" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
             </queries>
             <indexes/>
         </businessObject>
@@ -116,6 +121,14 @@ a.endDate = c.getField("EndDate");
                             <description>Id do cliente</description>
                         </queryParameter>
                     </queryParameters>
+                </query>
+                <query name="findPedidosAbertos" content="SELECT p &#13;&#10;FROM Pedido p &#13;&#10;WHERE p.estado != 'Completed'&#13;&#10;ORDER BY p.persistenceId ASC" returnType="java.util.List">
+                    <description>findNotCompleted</description>
+                    <queryParameters/>
+                </query>
+                <query name="findPedidosCompletados" content="SELECT p &#13;&#10;FROM Pedido p &#13;&#10;WHERE p.estado = 'Completed'&#13;&#10;ORDER BY p.persistenceId ASC" returnType="java.util.List">
+                    <description>findPedidosCompletados</description>
+                    <queryParameters/>
                 </query>
             </queries>
             <indexes/>
