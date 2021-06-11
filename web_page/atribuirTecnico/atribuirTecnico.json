@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "atribuirTecnico",
   "name" : "atribuirTecnico",
-  "lastUpdate" : 1623368526143,
+  "lastUpdate" : 1623419706796,
   "rows" : [
     [
       {
@@ -336,7 +336,7 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Tecnico Id"
+                    "value" : "Técnico"
                   },
                   "labelPosition" : {
                     "type" : "constant",
@@ -351,11 +351,11 @@
                   },
                   "availableValues" : {
                     "type" : "expression",
-                    "value" : "listaTecnicos"
+                    "value" : "listaTecnicosDisponiveis"
                   },
                   "displayedKey" : {
                     "type" : "constant",
-                    "value" : "firstName+\" \"+lastName"
+                    "value" : "firstname+\" \"+lastname + \" (email: \" + userName + \")\""
                   },
                   "returnedKey" : {
                     "type" : "constant",
@@ -604,6 +604,13 @@
       "type" : "url",
       "value" : [
         "../{{context.pedido_ref.link}}"
+      ],
+      "exposed" : false
+    },
+    "listaTecnicosDisponiveis" : {
+      "type" : "url",
+      "value" : [
+        "../API/identity/user?p=0&c=10&f=manager_id%3d{{curUser.user_id}}&s=DISPONIVEL"
       ],
       "exposed" : false
     }

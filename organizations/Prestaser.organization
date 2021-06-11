@@ -70,6 +70,7 @@
     <user userName="t1@p.com">
       <firstName>Eduarda</firstName>
       <lastName>Tecnico (G:1)</lastName>
+      <jobTitle>DISPONIVEL</jobTitle>
       <manager>gs1@p.com</manager>
       <personalData>
         <email>t1@p.com</email>
@@ -83,6 +84,7 @@
     <user userName="t2@p.com">
       <firstName>Raimundo</firstName>
       <lastName>Tecnico (G:1)</lastName>
+      <jobTitle>DISPONIVEL</jobTitle>
       <manager>gs1@p.com</manager>
       <personalData>
         <email>t2@p.com</email>
@@ -96,6 +98,7 @@
     <user userName="t3@p.com">
       <firstName>Fábio</firstName>
       <lastName>Tecnico (G:1)</lastName>
+      <jobTitle>DISPONIVEL</jobTitle>
       <manager>gs1@p.com</manager>
       <personalData>
         <email>t3@p.com</email>
@@ -109,6 +112,7 @@
     <user userName="t4@p.com">
       <firstName>Emília</firstName>
       <lastName>Tecnico (G:3)</lastName>
+      <jobTitle>DISPONIVEL</jobTitle>
       <manager>gs3@p.com</manager>
       <personalData>
         <email>t4@p.com</email>
@@ -122,7 +126,7 @@
     <user userName="t5@p.com">
       <firstName>Emanuel</firstName>
       <lastName>Tecnico (G:2)</lastName>
-      <jobTitle></jobTitle>
+      <jobTitle>DISPONIVEL</jobTitle>
       <manager>gs2@p.com</manager>
       <personalData>
         <email>t5@p.com</email>

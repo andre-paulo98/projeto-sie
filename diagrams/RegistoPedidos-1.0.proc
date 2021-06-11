@@ -9,6 +9,7 @@
           <stepSummary xmi:type="expression:Expression" xmi:id="_a5ZaxskEEeu4ybFjAWImeQ" name="" content="" returnTypeFixed="true"/>
         </elements>
         <elements xmi:type="process:CallActivity" xmi:id="_ucAewMkEEeu4ybFjAWImeQ" name="Confirmar se tem contrato" outgoing="_yYRgAMkEEeu4ybFjAWImeQ" incoming="_a5Za2MkEEeu4ybFjAWImeQ">
+          <textAnnotationAttachment xmi:type="process:TextAnnotationAttachment" xmi:id="_ZGV04MrJEeuyAPbXmyzj0w" source="_XbCwsMrJEeuyAPbXmyzj0w"/>
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_a5ZayMkEEeu4ybFjAWImeQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_a5ZayckEEeu4ybFjAWImeQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_a5ZayskEEeu4ybFjAWImeQ" name="" content="" returnTypeFixed="true"/>
@@ -336,6 +337,7 @@
             </messageContent>
           </events>
         </elements>
+        <elements xmi:type="process:TextAnnotation" xmi:id="_XbCwsMrJEeuyAPbXmyzj0w" text="se criar verificar se recebe o id"/>
       </elements>
       <data xmi:type="process:Data" xmi:id="_cSs6kMkFEeu4ybFjAWImeQ" name="clientId" dataType="_a5Za8ckEEeu4ybFjAWImeQ">
         <defaultValue xmi:type="expression:Expression" xmi:id="_cSs6kckFEeu4ybFjAWImeQ" content=""/>
@@ -347,7 +349,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_tevNgcltEeudmKdfol652Q" content="" returnType="java.lang.Long"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_a5Za1MkEEeu4ybFjAWImeQ">
-        <targetForm xmi:type="expression:Expression" xmi:id="_vTcLAMqOEeu6IdNbI3qhYg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_VP1C4Mq0Eeucl8x9Z98WNg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_a5Za1skEEeu4ybFjAWImeQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_a5Za18kEEeu4ybFjAWImeQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -465,6 +467,28 @@
               </parameters>
             </configuration>
           </connectors>
+          <connectors xmi:type="process:Connector" xmi:id="_PTEqMMqsEeucl8x9Z98WNg" name="definirListaTecnicosDisponiveis" definitionId="scripting-groovy-script" event="ON_ENTER" definitionVersion="1.0.1">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_PTEqMcqsEeucl8x9Z98WNg" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_PTEqMsqsEeucl8x9Z98WNg" key="script">
+                <expression xmi:type="expression:Expression" xmi:id="_PTEqM8qsEeucl8x9Z98WNg" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_PTEqNMqsEeucl8x9Z98WNg" key="variables"/>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_PTEqNcqsEeucl8x9Z98WNg" key="fakeScriptExpression">
+                <expression xmi:type="expression:Expression" xmi:id="_PTEqNsqsEeucl8x9Z98WNg" name="setListaTecnicos" content="import java.util.logging.Logger&#xD;&#xA;&#xD;&#xA;import org.bonitasoft.engine.identity.UserCriterion&#xD;&#xA;&#xD;&#xA;import groovy.json.JsonOutput&#xD;&#xA;&#xD;&#xA;Logger l = Logger.getLogger(&quot;a&quot;)&#xD;&#xA;l.severe(&quot;OBTER LISTA DE TECNICOS!!!!!&quot;)&#xD;&#xA;&#xD;&#xA;def group = apiAccessor.identityAPI.getGroupByPath(&quot;tecnico&quot;)&#xD;&#xA;def listaTecnicos = apiAccessor.identityAPI.getUsersInGroup(group.getId(), 0, 9999, UserCriterion.FIRST_NAME_ASC)&#xD;&#xA;def tecnicosDisponiveis = new ArrayList();&#xD;&#xA;&#xD;&#xA;for(tecnico in  listaTecnicos){&#xD;&#xA;&#x9;if(tecnico.jobTitle == null || tecnico.jobTitle.isEmpty())&#xD;&#xA;&#x9;&#x9;tecnicosDisponiveis.add(tecnico)&#xD;&#xA;}&#xD;&#xA;l.severe(listaTecnicos.size() + &quot; TECNICOS NA LISTA!!!&quot;)&#xD;&#xA;&#xD;&#xA;String json = JsonOutput.toJson(tecnicosDisponiveis)&#xD;&#xA;l.severe(json)&#xD;&#xA;&#xD;&#xA;return json" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_EdUMIMqtEeucl8x9Z98WNg" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                </expression>
+              </parameters>
+            </configuration>
+            <outputs xmi:type="expression:Operation" xmi:id="_PTEqOMqsEeucl8x9Z98WNg">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_PTEqOcqsEeucl8x9Z98WNg" name="listaTecnicos" content="listaTecnicos" type="TYPE_VARIABLE">
+                <referencedElements xmi:type="process:Data" xmi:id="_EdUzMMqtEeucl8x9Z98WNg" name="listaTecnicos" dataType="_a5Za8ckEEeu4ybFjAWImeQ"/>
+              </leftOperand>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_PTEqOsqsEeucl8x9Z98WNg" name="result" content="result" type="CONNECTOR_OUTPUT_TYPE" returnType="java.lang.Object">
+                <referencedElements xmi:type="definition:Output" xmi:id="_PTEqO8qsEeucl8x9Z98WNg" name="result" type="java.lang.Object"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_PTEqPMqsEeucl8x9Z98WNg" type="ASSIGNMENT"/>
+            </outputs>
+          </connectors>
           <operations xmi:type="expression:Operation" xmi:id="_fTeofMoMEeuZ_J39tiYXpQ">
             <leftOperand xmi:type="expression:Expression" xmi:id="_fTeofcoMEeuZ_J39tiYXpQ" name="pedido" content="pedido" type="TYPE_VARIABLE" returnType="com.company.model.Pedido">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_h0hhgMoPEeuZ_J39tiYXpQ" name="pedido" dataType="_a5Za9MkEEeu4ybFjAWImeQ" className="com.company.model.Pedido"/>
@@ -495,8 +519,9 @@
             <leftOperand xmi:type="expression:Expression" xmi:id="_R_KdccoyEeuNjvtW7AOS9A" name="pedido" content="pedido" type="TYPE_VARIABLE" returnType="com.company.model.Pedido">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_SY0TkMoyEeuNjvtW7AOS9A" name="pedido" dataType="_a5Za9MkEEeu4ybFjAWImeQ" className="com.company.model.Pedido"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_R_KdcsoyEeuNjvtW7AOS9A" name="setTecnico()" content="tecnicoSelecionado.userName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_gE3M0MoyEeuNjvtW7AOS9A" name="tecnicoSelecionado" dataType="_a5Za8skEEeu4ybFjAWImeQ" className="org.bonitasoft.engine.identity.User"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_R_KdcsoyEeuNjvtW7AOS9A" name="setTecnico-EstadoOcupado()" content="import java.util.logging.Logger&#xD;&#xA;&#xD;&#xA;import org.bonitasoft.engine.identity.UserUpdater&#xD;&#xA;&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUserByUserName(tecnicoSelecionado.userName)&#xD;&#xA;&#xD;&#xA;UserUpdater userUpdater = new UserUpdater()&#xD;&#xA;userUpdater.setJobTitle(&quot;OCUPADO&quot;)&#xD;&#xA;apiAccessor.getIdentityAPI().updateUser(user.id, userUpdater)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;return tecnicoSelecionado.userName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_l7tcQMqyEeucl8x9Z98WNg" name="tecnicoSelecionado" dataType="_a5Za8skEEeu4ybFjAWImeQ" className="org.bonitasoft.engine.identity.User"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_l7tcQcqyEeucl8x9Z98WNg" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_R_Kdc8oyEeuNjvtW7AOS9A" type="JAVA_METHOD" expression="setTecnico">
               <inputTypes>java.lang.String</inputTypes>
@@ -588,15 +613,9 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_JLQMQMo8EeuAncQlAkvQwg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_JLPlNso8EeuAncQlAkvQwg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:TextAnnotation" xmi:id="_WbjvQMo9EeuAncQlAkvQwg" text="os técnicos que estão disponíveis (falta rever)"/>
       </elements>
       <data xmi:type="process:Data" xmi:id="_R9T4kMoMEeuZ_J39tiYXpQ" name="idPedido" dataType="_a5Za78kEEeu4ybFjAWImeQ">
         <defaultValue xmi:type="expression:Expression" xmi:id="_R9T4kcoMEeuZ_J39tiYXpQ" content="" returnType="java.lang.Long"/>
-      </data>
-      <data xmi:type="process:Data" xmi:id="_TzBdAMoMEeuZ_J39tiYXpQ" name="listaTecnicos" dataType="_a5Za8ckEEeu4ybFjAWImeQ">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_TzBdAcoMEeuZ_J39tiYXpQ" name="init_listaTecnicos()" content="import java.util.logging.Logger&#xA;&#xA;import org.bonitasoft.engine.identity.UserCriterion&#xA;&#xA;import groovy.json.JsonOutput&#xA;&#xA;def group = apiAccessor.identityAPI.getGroupByPath(&quot;tecnico&quot;)&#xA;def listaTecnicos = apiAccessor.identityAPI.getUsersInGroup(group.getId(), 0, 9999, UserCriterion.FIRST_NAME_ASC)&#xA;def tecnicosDisponiveis = new ArrayList();&#xA;&#xA;for(tecnico in  listaTecnicos){&#xA;&#x9;if(tecnico.jobTitle == null)&#xA;&#x9;&#x9;tecnicosDisponiveis.add(tecnico)&#xA;}&#xA;&#xA;&#xA;return JsonOutput.toJson(tecnicosDisponiveis)&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-          <referencedElements xmi:type="expression:Expression" xmi:id="_aJZJMMoMEeuZ_J39tiYXpQ" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-        </defaultValue>
       </data>
       <data xmi:type="process:JavaObjectData" xmi:id="_d4ssgMoMEeuZ_J39tiYXpQ" name="tecnicoSelecionado" dataType="_a5Za8skEEeu4ybFjAWImeQ" className="org.bonitasoft.engine.identity.User">
         <defaultValue xmi:type="expression:Expression" xmi:id="_d4ssgcoMEeuZ_J39tiYXpQ" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="org.bonitasoft.engine.identity.User"/>
@@ -604,8 +623,11 @@
       <data xmi:type="process:BusinessObjectData" xmi:id="_yMFGIMoMEeuZ_J39tiYXpQ" name="pedido" dataType="_a5Za9MkEEeu4ybFjAWImeQ" className="com.company.model.Pedido">
         <defaultValue xmi:type="expression:Expression" xmi:id="_yMFGIcoMEeuZ_J39tiYXpQ" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
+      <data xmi:type="process:Data" xmi:id="_REchMMqsEeucl8x9Z98WNg" name="listaTecnicos" dataType="_a5Za8ckEEeu4ybFjAWImeQ">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_REchMcqsEeucl8x9Z98WNg" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT"/>
+      </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_lYiNEMoKEeuZ_J39tiYXpQ">
-        <targetForm xmi:type="expression:Expression" xmi:id="_u97OAMqOEeu6IdNbI3qhYg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_U3iesMq0Eeucl8x9Z98WNg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_lYiNEsoKEeuZ_J39tiYXpQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_lYiNE8oKEeuZ_J39tiYXpQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -702,6 +724,13 @@
               <children xmi:type="notation:DecorationNode" xmi:id="_ZyHnAMlvEeudmKdfol652Q" type="5011"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZyG_8MlvEeudmKdfol652Q" x="493" y="60" width="120" height="60"/>
             </children>
+            <children xmi:type="notation:Node" xmi:id="_XbHpMMrJEeuyAPbXmyzj0w" type="3015" element="_XbCwsMrJEeuyAPbXmyzj0w">
+              <children xmi:type="notation:DecorationNode" xmi:id="_XbI3UMrJEeuyAPbXmyzj0w" type="5010"/>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_XbHpMcrJEeuyAPbXmyzj0w"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_XbHpMsrJEeuyAPbXmyzj0w" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_XbHpM8rJEeuyAPbXmyzj0w"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XbHpNMrJEeuyAPbXmyzj0w" x="99" y="141"/>
+            </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_a5ZbA8kEEeu4ybFjAWImeQ"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_a5ZbBMkEEeu4ybFjAWImeQ" fontName="Segoe UI"/>
@@ -745,13 +774,6 @@
             <children xmi:type="notation:Shape" xmi:id="_JLSogMo8EeuAncQlAkvQwg" type="3027" element="_JLKssMo8EeuAncQlAkvQwg" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_JLSogso8EeuAncQlAkvQwg" type="5017"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JLSogco8EeuAncQlAkvQwg" x="137" y="99"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_WbjvQco9EeuAncQlAkvQwg" type="3015" element="_WbjvQMo9EeuAncQlAkvQwg">
-              <children xmi:type="notation:DecorationNode" xmi:id="_WbkWUMo9EeuAncQlAkvQwg" type="5010"/>
-              <styles xmi:type="notation:DescriptionStyle" xmi:id="_WbjvQso9EeuAncQlAkvQwg"/>
-              <styles xmi:type="notation:FontStyle" xmi:id="_WbjvQ8o9EeuAncQlAkvQwg" fontName="Segoe UI"/>
-              <styles xmi:type="notation:LineStyle" xmi:id="_WbjvRMo9EeuAncQlAkvQwg"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WbjvRco9EeuAncQlAkvQwg" x="246" y="171" width="150" height="64"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_l-OUEcoKEeuZ_J39tiYXpQ"/>
@@ -840,6 +862,11 @@
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_JLgq8co8EeuAncQlAkvQwg" fontName="Segoe UI"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JLgq8so8EeuAncQlAkvQwg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_ZGXqEMrJEeuyAPbXmyzj0w" type="4003" element="_ZGV04MrJEeuyAPbXmyzj0w" source="_XbHpMMrJEeuyAPbXmyzj0w" target="_ucBs4MkEEeu4ybFjAWImeQ">
+      <styles xmi:type="notation:FontStyle" xmi:id="_ZGXqEcrJEeuyAPbXmyzj0w" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ZGXqEsrJEeuyAPbXmyzj0w" points="[-36, -9, -82, 61]$[-75, -19, -121, 51]$[-14, -45, -60, 25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ZGb7gMrJEeuyAPbXmyzj0w" id="(1.0,0.18)"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>
