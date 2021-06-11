@@ -226,7 +226,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_k17lIcqgEeuay6daAqWfHw" name="0" content="0" returnType="java.lang.Integer"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_3e4lm7VdEeueyYy01cW2-g">
-        <targetForm xmi:type="expression:Expression" xmi:id="_F98vEMrGEeuyAPbXmyzj0w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_LQlQ4MrHEeuyAPbXmyzj0w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_3e4lnbVdEeueyYy01cW2-g">
         <targetForm xmi:type="expression:Expression" xmi:id="_3e4lnrVdEeueyYy01cW2-g" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -442,19 +442,6 @@
             <operator xmi:type="expression:Operator" xmi:id="_3rumpcrFEeuyAPbXmyzj0w" type="ASSIGNMENT"/>
           </outputs>
         </connectors>
-        <connectors xmi:type="process:Connector" xmi:id="_AiAq0MrGEeuyAPbXmyzj0w" name="a" definitionId="scripting-groovy-script" event="ON_FINISH" definitionVersion="1.0.1">
-          <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_AiAq0crGEeuyAPbXmyzj0w" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
-            <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_AiAq0srGEeuyAPbXmyzj0w" key="script">
-              <expression xmi:type="expression:Expression" xmi:id="_AiAq08rGEeuyAPbXmyzj0w" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
-            </parameters>
-            <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_AiAq1MrGEeuyAPbXmyzj0w" key="variables"/>
-            <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_AiAq1crGEeuyAPbXmyzj0w" key="fakeScriptExpression">
-              <expression xmi:type="expression:Expression" xmi:id="_AiAq1srGEeuyAPbXmyzj0w" name="aaa" content="import java.util.logging.Logger&#xD;&#xA;&#xD;&#xA;Logger l = Logger.getLogger(&quot;a&quot;)&#xD;&#xA;&#xD;&#xA;l.severe(&quot;FATURA INSERIDA: &quot; + idFaturaInserida + &quot;&quot;)" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
-                <referencedElements xmi:type="process:Data" xmi:id="_EIUDIMrGEeuyAPbXmyzj0w" name="idFaturaInserida" dataType="_3e4ltrVdEeueyYy01cW2-g"/>
-              </expression>
-            </parameters>
-          </configuration>
-        </connectors>
         <loopCondition xmi:type="expression:Expression" xmi:id="_UtHpU8qyEeu5_vz_SfX0Jg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         <loopMaximum xmi:type="expression:Expression" xmi:id="_UtHpVMqyEeu5_vz_SfX0Jg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
         <cardinalityExpression xmi:type="expression:Expression" xmi:id="_UtHpVcqyEeu5_vz_SfX0Jg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -480,7 +467,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_V_cEccrAEeu5_vz_SfX0Jg" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_31Vij8qtEeu5_vz_SfX0Jg">
-        <targetForm xmi:type="expression:Expression" xmi:id="_F5u9cMrGEeuyAPbXmyzj0w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_LMCvIMrHEeuyAPbXmyzj0w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_31VikcqtEeu5_vz_SfX0Jg">
         <targetForm xmi:type="expression:Expression" xmi:id="_31ViksqtEeu5_vz_SfX0Jg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
