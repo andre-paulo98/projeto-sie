@@ -57,18 +57,13 @@
                 <expression xmi:type="expression:TableExpression" xmi:id="_uVL31soNEeuZ_J39tiYXpQ">
                   <expressions xmi:type="expression:ListExpression" xmi:id="_uVL318oNEeuZ_J39tiYXpQ">
                     <expressions xmi:type="expression:Expression" xmi:id="_uVL32MoNEeuZ_J39tiYXpQ" name="Status" content="Status"/>
-                    <expressions xmi:type="expression:Expression" xmi:id="_uVL32coNEeuZ_J39tiYXpQ" name="In Progress" content="In Progress"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_uVL32coNEeuZ_J39tiYXpQ" name="pedido.estado" content="pedido.estado" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_4d9u8MqQEeu6IdNbI3qhYg" name="pedido" dataType="_ezqDpMoNEeuZ_J39tiYXpQ" className="com.company.model.Pedido"/>
+                    </expressions>
                   </expressions>
                 </expression>
               </parameters>
             </configuration>
-            <outputs xmi:type="expression:Operation" xmi:id="_uVL32soNEeuZ_J39tiYXpQ">
-              <leftOperand xmi:type="expression:Expression" xmi:id="_uVL328oNEeuZ_J39tiYXpQ"/>
-              <rightOperand xmi:type="expression:Expression" xmi:id="_uVL33MoNEeuZ_J39tiYXpQ" name="saveResult" content="saveResult" type="CONNECTOR_OUTPUT_TYPE" returnType="com.sforce.soap.partner.SaveResult">
-                <referencedElements xmi:type="definition:Output" xmi:id="_uVL33coNEeuZ_J39tiYXpQ" name="saveResult" type="com.sforce.soap.partner.SaveResult"/>
-              </rightOperand>
-              <operator xmi:type="expression:Operator" xmi:id="_uVL33soNEeuZ_J39tiYXpQ" type="ASSIGNMENT"/>
-            </outputs>
           </connectors>
           <operations xmi:type="expression:Operation" xmi:id="_uVL338oNEeuZ_J39tiYXpQ">
             <leftOperand xmi:type="expression:Expression" xmi:id="_uVL34MoNEeuZ_J39tiYXpQ" name="pedido" content="pedido" type="TYPE_VARIABLE" returnType="com.company.model.Pedido">
@@ -79,6 +74,15 @@
               <referencedElements xmi:type="process:Data" xmi:id="_uVMessoNEeuZ_J39tiYXpQ" name="idPedido" dataType="_ezqDn8oNEeuZ_J39tiYXpQ"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_uVMes8oNEeuZ_J39tiYXpQ" type="ASSIGNMENT"/>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_vEkWoMqQEeu6IdNbI3qhYg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_vEkWocqQEeu6IdNbI3qhYg" name="pedido" content="pedido" type="TYPE_VARIABLE" returnType="com.company.model.Pedido">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_vgpOoMqQEeu6IdNbI3qhYg" name="pedido" dataType="_ezqDpMoNEeuZ_J39tiYXpQ" className="com.company.model.Pedido"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_vEkWosqQEeu6IdNbI3qhYg" name="In Progress" content="In Progress"/>
+            <operator xmi:type="expression:Operator" xmi:id="_vEkWo8qQEeu6IdNbI3qhYg" type="JAVA_METHOD" expression="setEstado">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
           </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_uVMetMoNEeuZ_J39tiYXpQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_uVMetcoNEeuZ_J39tiYXpQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -140,7 +144,9 @@
                 <expression xmi:type="expression:TableExpression" xmi:id="_AMY8UMouEeu7g_VdTF7JOw">
                   <expressions xmi:type="expression:ListExpression" xmi:id="_AMY8UcouEeu7g_VdTF7JOw">
                     <expressions xmi:type="expression:Expression" xmi:id="_AMY8UsouEeu7g_VdTF7JOw" name="Status" content="Status"/>
-                    <expressions xmi:type="expression:Expression" xmi:id="_AMY8U8ouEeu7g_VdTF7JOw" name="Waiting on someone else" content="Waiting on someone else" interpreter="GROOVY"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_AMY8U8ouEeu7g_VdTF7JOw" name="pedido.estado" content="pedido.estado" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_pe214MqREeu6IdNbI3qhYg" name="pedido" dataType="_ezqDpMoNEeuZ_J39tiYXpQ" className="com.company.model.Pedido"/>
+                    </expressions>
                   </expressions>
                 </expression>
               </parameters>
@@ -166,6 +172,15 @@
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_uVMeysoNEeuZ_J39tiYXpQ" type="ASSIGNMENT" expression="addAll">
               <inputTypes>java.util.Collection</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_afxncMqREeu6IdNbI3qhYg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_afxnccqREeu6IdNbI3qhYg" name="pedido" content="pedido" type="TYPE_VARIABLE" returnType="com.company.model.Pedido">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_bHZBEMqREeu6IdNbI3qhYg" name="pedido" dataType="_ezqDpMoNEeuZ_J39tiYXpQ" className="com.company.model.Pedido"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_afxncsqREeu6IdNbI3qhYg" name="Waiting on someone else" content="Waiting on someone else"/>
+            <operator xmi:type="expression:Operator" xmi:id="_afxnc8qREeu6IdNbI3qhYg" type="JAVA_METHOD" expression="setEstado">
+              <inputTypes>java.lang.String</inputTypes>
             </operator>
           </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_uVMey8oNEeuZ_J39tiYXpQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
@@ -249,18 +264,13 @@
                 <expression xmi:type="expression:TableExpression" xmi:id="_y-5AQMotEeu7g_VdTF7JOw">
                   <expressions xmi:type="expression:ListExpression" xmi:id="_y-5AQcotEeu7g_VdTF7JOw">
                     <expressions xmi:type="expression:Expression" xmi:id="_y-5AQsotEeu7g_VdTF7JOw" name="Status" content="Status"/>
-                    <expressions xmi:type="expression:Expression" xmi:id="_y-5AQ8otEeu7g_VdTF7JOw" name="Completed" content="Completed" interpreter="GROOVY"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_y-5AQ8otEeu7g_VdTF7JOw" name="pedido.estado" content="pedido.estado" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_3UCdAMqREeu6IdNbI3qhYg" name="pedido" dataType="_ezqDpMoNEeuZ_J39tiYXpQ" className="com.company.model.Pedido"/>
+                    </expressions>
                   </expressions>
                 </expression>
               </parameters>
             </configuration>
-            <outputs xmi:type="expression:Operation" xmi:id="_y-5ARMotEeu7g_VdTF7JOw">
-              <leftOperand xmi:type="expression:Expression" xmi:id="_y-5ARcotEeu7g_VdTF7JOw" content=""/>
-              <rightOperand xmi:type="expression:Expression" xmi:id="_y-5ARsotEeu7g_VdTF7JOw" name="saveResult" content="saveResult" type="CONNECTOR_OUTPUT_TYPE" returnType="com.sforce.soap.partner.SaveResult">
-                <referencedElements xmi:type="definition:Output" xmi:id="_y-5AR8otEeu7g_VdTF7JOw" name="saveResult" type="com.sforce.soap.partner.SaveResult"/>
-              </rightOperand>
-              <operator xmi:type="expression:Operator" xmi:id="_y-5ASMotEeu7g_VdTF7JOw" type="ASSIGNMENT"/>
-            </outputs>
           </connectors>
           <operations xmi:type="expression:Operation" xmi:id="_uVNFxMoNEeuZ_J39tiYXpQ">
             <leftOperand xmi:type="expression:Expression" xmi:id="_uVNFxcoNEeuZ_J39tiYXpQ" name="intervencoes" content="intervencoes" type="TYPE_VARIABLE" returnType="java.util.List">
@@ -272,6 +282,15 @@
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_uVNFysoNEeuZ_J39tiYXpQ" type="ASSIGNMENT" expression="addAll">
               <inputTypes>java.util.Collection</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_vwPUYMqREeu6IdNbI3qhYg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_vwPUYcqREeu6IdNbI3qhYg" name="pedido" content="pedido" type="TYPE_VARIABLE" returnType="com.company.model.Pedido">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_x40xgMqREeu6IdNbI3qhYg" name="pedido" dataType="_ezqDpMoNEeuZ_J39tiYXpQ" className="com.company.model.Pedido"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_vwPUYsqREeu6IdNbI3qhYg" name="Completed" content="Completed"/>
+            <operator xmi:type="expression:Operator" xmi:id="_vwPUY8qREeu6IdNbI3qhYg" type="JAVA_METHOD" expression="setEstado">
+              <inputTypes>java.lang.String</inputTypes>
             </operator>
           </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_uVNFy8oNEeuZ_J39tiYXpQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
@@ -608,7 +627,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_pldZIcoNEeuZ_J39tiYXpQ" content="" returnType="java.lang.Long"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_ezqDhMoNEeuZ_J39tiYXpQ">
-        <targetForm xmi:type="expression:Expression" xmi:id="_6WmecMo2EeuAncQlAkvQwg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_kkIakMqMEeu6IdNbI3qhYg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_ezqDhsoNEeuZ_J39tiYXpQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_ezqDh8oNEeuZ_J39tiYXpQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>

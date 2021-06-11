@@ -110,7 +110,7 @@ a.endDate = c.getField("EndDate");
             </fields>
             <uniqueConstraints/>
             <queries>
-                <query name="findPedidosCliente" content="SELECT p &#10;FROM Pedido p &#10;WHERE p.cliente.id = :clienteId&#10;ORDER BY p.persistenceId ASC" returnType="java.util.List">
+                <query name="findPedidosCliente" content="SELECT p &#10;FROM Pedido p &#10;WHERE p.cliente.id = :clienteId AND p.estado LIKE 'Completed'&#10;ORDER BY p.persistenceId ASC" returnType="java.util.List">
                     <queryParameters>
                         <queryParameter name="clienteId" className="java.lang.String">
                             <description>Id do cliente</description>

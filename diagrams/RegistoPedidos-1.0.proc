@@ -98,7 +98,9 @@
                   </expressions>
                   <expressions xmi:type="expression:ListExpression" xmi:id="_AVBmwMldEeudmKdfol652Q">
                     <expressions xmi:type="expression:Expression" xmi:id="_AVBmwcldEeudmKdfol652Q" name="Status" content="Status"/>
-                    <expressions xmi:type="expression:Expression" xmi:id="_AVBmwsldEeudmKdfol652Q" name="Not Started" content="Not Started"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_AVBmwsldEeudmKdfol652Q" name="pedido.estado" content="pedido.estado" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_NJQHsMqQEeu6IdNbI3qhYg" name="pedido" dataType="_a5Za9MkEEeu4ybFjAWImeQ" className="com.company.model.Pedido"/>
+                    </expressions>
                   </expressions>
                 </expression>
               </parameters>
@@ -162,7 +164,7 @@
             <leftOperand xmi:type="expression:Expression" xmi:id="_7EewV8kGEeu4ybFjAWImeQ" name="pedido" content="pedido" type="TYPE_VARIABLE" returnType="com.company.model.Pedido">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_7EewWMkGEeu4ybFjAWImeQ" name="pedido" dataType="_a5Za9MkEEeu4ybFjAWImeQ" className="com.company.model.Pedido"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_7EewWckGEeu4ybFjAWImeQ" name="Not Started&#xD;&#xA;" content="Not Started&#xD;&#xA;" interpreter="GROOVY"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_7EewWckGEeu4ybFjAWImeQ" name="Not Started" content="Not Started" interpreter="GROOVY"/>
             <operator xmi:type="expression:Operator" xmi:id="_7EewW8kGEeu4ybFjAWImeQ" type="JAVA_METHOD" expression="setEstado">
               <inputTypes>java.lang.String</inputTypes>
             </operator>
@@ -345,7 +347,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_tevNgcltEeudmKdfol652Q" content="" returnType="java.lang.Long"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_a5Za1MkEEeu4ybFjAWImeQ">
-        <targetForm xmi:type="expression:Expression" xmi:id="_G2_OIMo9EeuAncQlAkvQwg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_vTcLAMqOEeu6IdNbI3qhYg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_a5Za1skEEeu4ybFjAWImeQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_a5Za18kEEeu4ybFjAWImeQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -449,26 +451,19 @@
                 <expression xmi:type="expression:TableExpression" xmi:id="_96gnAMoyEeuNjvtW7AOS9A">
                   <expressions xmi:type="expression:ListExpression" xmi:id="_96gnAcoyEeuNjvtW7AOS9A">
                     <expressions xmi:type="expression:Expression" xmi:id="_96gnAsoyEeuNjvtW7AOS9A" name="EmailGestorServico__c" content="EmailGestorServico__c"/>
-                    <expressions xmi:type="expression:Expression" xmi:id="_96gnA8oyEeuNjvtW7AOS9A" name="newScript()" content="pedido.gestorServico" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_96gnBMoyEeuNjvtW7AOS9A" name="pedido" dataType="_a5Za9MkEEeu4ybFjAWImeQ" className="com.company.model.Pedido"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_96gnA8oyEeuNjvtW7AOS9A" name="pedido.gestorServico" content="pedido.gestorServico" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_mfk2wMqQEeu6IdNbI3qhYg" name="pedido" dataType="_a5Za9MkEEeu4ybFjAWImeQ" className="com.company.model.Pedido"/>
                     </expressions>
                   </expressions>
                   <expressions xmi:type="expression:ListExpression" xmi:id="_96gnBcoyEeuNjvtW7AOS9A">
                     <expressions xmi:type="expression:Expression" xmi:id="_96gnBsoyEeuNjvtW7AOS9A" name="EmailTecnico__c" content="EmailTecnico__c"/>
-                    <expressions xmi:type="expression:Expression" xmi:id="_96gnB8oyEeuNjvtW7AOS9A" name="newScript()" content="pedido.tecnico" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_96gnCMoyEeuNjvtW7AOS9A" name="pedido" dataType="_a5Za9MkEEeu4ybFjAWImeQ" className="com.company.model.Pedido"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_96gnB8oyEeuNjvtW7AOS9A" name="pedido.tecnico" content="pedido.tecnico" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_mfk2wcqQEeu6IdNbI3qhYg" name="pedido" dataType="_a5Za9MkEEeu4ybFjAWImeQ" className="com.company.model.Pedido"/>
                     </expressions>
                   </expressions>
                 </expression>
               </parameters>
             </configuration>
-            <outputs xmi:type="expression:Operation" xmi:id="_96gnCcoyEeuNjvtW7AOS9A">
-              <leftOperand xmi:type="expression:Expression" xmi:id="_96gnCsoyEeuNjvtW7AOS9A"/>
-              <rightOperand xmi:type="expression:Expression" xmi:id="_96gnC8oyEeuNjvtW7AOS9A" name="saveResult" content="saveResult" type="CONNECTOR_OUTPUT_TYPE" returnType="com.sforce.soap.partner.SaveResult">
-                <referencedElements xmi:type="definition:Output" xmi:id="_96gnDMoyEeuNjvtW7AOS9A" name="saveResult" type="com.sforce.soap.partner.SaveResult"/>
-              </rightOperand>
-              <operator xmi:type="expression:Operator" xmi:id="_96gnDcoyEeuNjvtW7AOS9A" type="ASSIGNMENT"/>
-            </outputs>
           </connectors>
           <operations xmi:type="expression:Operation" xmi:id="_fTeofMoMEeuZ_J39tiYXpQ">
             <leftOperand xmi:type="expression:Expression" xmi:id="_fTeofcoMEeuZ_J39tiYXpQ" name="pedido" content="pedido" type="TYPE_VARIABLE" returnType="com.company.model.Pedido">
@@ -610,7 +605,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_yMFGIcoMEeuZ_J39tiYXpQ" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_lYiNEMoKEeuZ_J39tiYXpQ">
-        <targetForm xmi:type="expression:Expression" xmi:id="_GnNFsMo9EeuAncQlAkvQwg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_u97OAMqOEeu6IdNbI3qhYg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_lYiNEsoKEeuZ_J39tiYXpQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_lYiNE8oKEeuZ_J39tiYXpQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
