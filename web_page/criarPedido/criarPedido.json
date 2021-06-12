@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "criarPedido",
   "name" : "criarPedido",
-  "lastUpdate" : 1623415724947,
+  "lastUpdate" : 1623501652287,
   "rows" : [
     [
       {
@@ -247,7 +247,7 @@
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : "formInput.pedidoInput.cliente"
+                          "value" : "a.value"
                         },
                         "required" : {
                           "type" : "constant",
@@ -255,13 +255,15 @@
                         },
                         "disabled" : {
                           "type" : "constant",
-                          "value" : true
+                          "value" : false
                         },
                         "displayedKey" : {
-                          "type" : "constant"
+                          "type" : "constant",
+                          "value" : "nome"
                         },
                         "returnedKey" : {
-                          "type" : "constant"
+                          "type" : "constant",
+                          "value" : "id"
                         }
                       },
                       "reference" : "4ea54265-f1cf-4057-8cc5-465aa865665c",
@@ -583,9 +585,6 @@
       "value" : [
         "{\r",
         "  \"pedidoInput\" : {\r",
-        "    \"cliente\" : {\r",
-        "      \"persistenceId_string\" : \"\"\r",
-        "    },\r",
         "    \"administrativo\" : \"\",\r",
         "    \"estado\" : \"\",\r",
         "    \"dataInicio\" : null,\r",
@@ -638,6 +637,22 @@
       "type" : "urlparameter",
       "value" : [
         "id"
+      ],
+      "exposed" : false
+    },
+    "clientId" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/caseVariable/{{task.caseId}}/clientId"
+      ],
+      "exposed" : false
+    },
+    "a" : {
+      "type" : "expression",
+      "value" : [
+        "console.log($data.clientId)",
+        "",
+        "return $data.clientId"
       ],
       "exposed" : false
     }

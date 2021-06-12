@@ -4,10 +4,18 @@
         <displayName>Prestaser</displayName>
         <applicationPages>
             <applicationPage customPage="custompage_PaginaPrincipal" token="home"/>
+            <applicationPage customPage="custompage_PaginaClientes" token="clientes"/>
+            <applicationPage customPage="custompage_PaginaReclamacoes" token="reclamacoes"/>
         </applicationPages>
         <applicationMenus>
             <applicationMenu applicationPage="home">
-                <displayName>Home</displayName>
+                <displayName>Pedidos</displayName>
+            </applicationMenu>
+            <applicationMenu applicationPage="clientes">
+                <displayName>Clientes</displayName>
+            </applicationMenu>
+            <applicationMenu applicationPage="reclamacoes">
+                <displayName>Reclamações</displayName>
             </applicationMenu>
         </applicationMenus>
     </application>

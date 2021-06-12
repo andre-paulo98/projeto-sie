@@ -1,8 +1,8 @@
 {
   "modelVersion" : "2.0",
-  "id" : "PaginaPrincipal",
-  "name" : "PaginaPrincipal",
-  "lastUpdate" : 1623497496086,
+  "id" : "PaginaReclamacoes",
+  "name" : "PaginaReclamacoes",
+  "lastUpdate" : 1623499692396,
   "rows" : [
     [
       {
@@ -27,7 +27,7 @@
             "value" : ""
           }
         },
-        "reference" : "7f0c6e96-7c99-40da-ba23-5373ba2eefcb",
+        "reference" : "93093822-9efd-42ad-b9bc-d7385abd923c",
         "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [
@@ -51,7 +51,7 @@
                 },
                 "text" : {
                   "type" : "interpolation",
-                  "value" : "Lista de pedidos não completos"
+                  "value" : "Reclamações em aberto"
                 },
                 "level" : {
                   "type" : "constant",
@@ -62,7 +62,7 @@
                   "value" : "left"
                 }
               },
-              "reference" : "cad7afbf-d5b2-4eb9-bdcf-ea24609529e9",
+              "reference" : "ad7b2834-db8e-4657-bb46-186e8d7fcecb",
               "hasValidationError" : false,
               "id" : "pbTitle"
             },
@@ -85,7 +85,7 @@
                 },
                 "text" : {
                   "type" : "interpolation",
-                  "value" : "Criar novo pedido"
+                  "value" : "Criar nova reclamação"
                 },
                 "type" : {
                   "type" : "constant",
@@ -100,7 +100,7 @@
                 },
                 "processName" : {
                   "type" : "constant",
-                  "value" : "Registo Pedidos"
+                  "value" : "Registo de Reclamações"
                 },
                 "processVersion" : {
                   "type" : "constant",
@@ -131,7 +131,7 @@
                   "value" : "success"
                 }
               },
-              "reference" : "2b9bd6a8-a392-4055-a847-c4d015d85f7d",
+              "reference" : "3d1e4398-6f5e-4a27-89eb-3cdfe17f17cf",
               "hasValidationError" : false,
               "id" : "pbLink"
             }
@@ -163,10 +163,10 @@
                   "value" : 12
                 }
               },
-              "reference" : "6cd2d4d7-69f1-4809-80fb-2b3b3076621a",
+              "reference" : "8108fb9e-d7ba-47ff-90fa-28ff67702720",
               "hasValidationError" : false,
               "id" : "pbContainer",
-              "description" : "Auto generate ui for business object \"com.company.model.Pedido\"",
+              "description" : "Auto generate ui for business object \"com.company.model.Reclamacao\"",
               "rows" : [
                 [
                   {
@@ -174,24 +174,11 @@
                     "dimension" : {
                       "xs" : 12
                     },
-                    "propertyValues" : {
-                      "cssClasses" : {
-                        "type" : "constant",
-                        "value" : ""
-                      },
-                      "hidden" : {
-                        "type" : "constant",
-                        "value" : false
-                      },
-                      "repeatedCollection" : {
-                        "type" : "variable",
-                        "value" : ""
-                      }
-                    },
-                    "reference" : "82e4114a-b8f9-49b5-8839-073ee52c7e25",
+                    "propertyValues" : { },
+                    "reference" : "4712b299-90ee-4ff9-82a3-0ec0319df783",
                     "hasValidationError" : false,
                     "id" : "pbContainer",
-                    "description" : "\"com.company.model.Pedido\" object from \"pedidos\" variable",
+                    "description" : "\"com.company.model.Reclamacao\" object from \"reclamacao\" variable",
                     "rows" : [
                       [
                         {
@@ -207,14 +194,16 @@
                               "type" : "constant",
                               "value" : [
                                 "Id",
-                                "Administrativo",
-                                "Gestor Servico",
+                                "Tipo",
+                                "Assunto",
+                                "Descricao",
                                 "Estado",
                                 "Data Inicio",
                                 "Data Fim",
-                                "Assunto",
-                                "Descricao",
-                                "Tecnico"
+                                "Nota Credito",
+                                "Valor Credito",
+                                "Origem",
+                                "Esclarecimento"
                               ]
                             },
                             "allowHtml" : {
@@ -239,20 +228,22 @@
                             },
                             "selectedRow" : {
                               "type" : "variable",
-                              "value" : "pedidos_selected"
+                              "value" : "reclamacao_selected"
                             },
                             "columnsKey" : {
                               "type" : "constant",
                               "value" : [
                                 "id",
-                                "administrativo",
-                                "gestorServico",
+                                "tipo",
+                                "assunto",
+                                "descricao",
                                 "estado",
                                 "dataInicio",
                                 "dataFim",
-                                "assunto",
-                                "descricao",
-                                "tecnico"
+                                "notaCredito",
+                                "valorCredito",
+                                "origem",
+                                "esclarecimento"
                               ]
                             },
                             "dimension" : {
@@ -261,22 +252,14 @@
                             },
                             "content" : {
                               "type" : "expression",
-                              "value" : "pedidos"
+                              "value" : "reclamacao"
                             },
                             "zebraStriping" : {
                               "type" : "constant",
                               "value" : true
-                            },
-                            "allowHTML" : {
-                              "type" : "constant",
-                              "value" : true
-                            },
-                            "striped" : {
-                              "type" : "constant",
-                              "value" : true
                             }
                           },
-                          "reference" : "962d0734-dac1-4931-b246-66cd65d5b11d",
+                          "reference" : "110103b3-5cc3-4179-96f7-8062a11a76de",
                           "hasValidationError" : false,
                           "id" : "pbTable",
                           "description" : ""
@@ -298,7 +281,7 @@
                             },
                             "hidden" : {
                               "type" : "expression",
-                              "value" : "!pedidos_selected"
+                              "value" : "!reclamacao_selected"
                             },
                             "cssClasses" : {
                               "type" : "constant",
@@ -309,10 +292,10 @@
                               "value" : 11
                             }
                           },
-                          "reference" : "2b8a2476-0316-4066-8a90-1ea821fd5fe9",
+                          "reference" : "97dff404-d346-4bbc-9028-12571c4991db",
                           "hasValidationError" : false,
                           "id" : "pbContainer",
-                          "description" : "Display \"Pedido\" details when a line is selected in the table above",
+                          "description" : "Display \"Reclamacao\" details when a line is selected in the table above",
                           "rows" : [
                             [
                               {
@@ -330,7 +313,7 @@
                                   },
                                   "hidden" : {
                                     "type" : "expression",
-                                    "value" : "!pedidos_selected.id"
+                                    "value" : "!reclamacao_selected.id"
                                   },
                                   "labelPosition" : {
                                     "type" : "constant",
@@ -365,7 +348,7 @@
                                   },
                                   "value" : {
                                     "type" : "variable",
-                                    "value" : "pedidos_selected.id"
+                                    "value" : "reclamacao_selected.id"
                                   },
                                   "required" : {
                                     "type" : "constant",
@@ -390,7 +373,7 @@
                                     "value" : 1
                                   }
                                 },
-                                "reference" : "b56d7620-b89a-4048-b7e5-22b579f453be",
+                                "reference" : "960cc53f-b003-4d50-a15a-c562dc8ddcf2",
                                 "hasValidationError" : false,
                                 "id" : "pbInput",
                                 "description" : ""
@@ -412,7 +395,7 @@
                                   },
                                   "hidden" : {
                                     "type" : "expression",
-                                    "value" : "!pedidos_selected.administrativo"
+                                    "value" : "!reclamacao_selected.tipo"
                                   },
                                   "labelPosition" : {
                                     "type" : "constant",
@@ -432,14 +415,14 @@
                                   },
                                   "label" : {
                                     "type" : "interpolation",
-                                    "value" : "Administrativo"
+                                    "value" : "Tipo"
                                   },
                                   "placeholder" : {
                                     "type" : "constant"
                                   },
                                   "type" : {
                                     "type" : "constant",
-                                    "value" : "text"
+                                    "value" : "number"
                                   },
                                   "dimension" : {
                                     "type" : "constant",
@@ -447,14 +430,14 @@
                                   },
                                   "value" : {
                                     "type" : "variable",
-                                    "value" : "pedidos_selected.administrativo"
+                                    "value" : "reclamacao_selected.tipo"
                                   },
                                   "required" : {
                                     "type" : "constant",
                                     "value" : false
                                   }
                                 },
-                                "reference" : "cfa08582-b6a7-4bfb-bfd1-e984dd2dfe6b",
+                                "reference" : "a05f62c2-9118-4cf9-a209-aaa6a7ff1d1a",
                                 "hasValidationError" : false,
                                 "id" : "pbInput",
                                 "description" : ""
@@ -476,7 +459,7 @@
                                   },
                                   "hidden" : {
                                     "type" : "expression",
-                                    "value" : "!pedidos_selected.gestorServico"
+                                    "value" : "!reclamacao_selected.assunto"
                                   },
                                   "labelPosition" : {
                                     "type" : "constant",
@@ -496,7 +479,7 @@
                                   },
                                   "label" : {
                                     "type" : "interpolation",
-                                    "value" : "Gestor Servico"
+                                    "value" : "Assunto"
                                   },
                                   "placeholder" : {
                                     "type" : "constant"
@@ -511,32 +494,14 @@
                                   },
                                   "value" : {
                                     "type" : "variable",
-                                    "value" : "pedidos_selected.gestorServico"
+                                    "value" : "reclamacao_selected.assunto"
                                   },
                                   "required" : {
                                     "type" : "constant",
                                     "value" : false
-                                  },
-                                  "minLength" : {
-                                    "type" : "constant",
-                                    "value" : ""
-                                  },
-                                  "maxLength" : {
-                                    "type" : "constant",
-                                    "value" : ""
-                                  },
-                                  "min" : {
-                                    "type" : "constant"
-                                  },
-                                  "max" : {
-                                    "type" : "constant"
-                                  },
-                                  "step" : {
-                                    "type" : "constant",
-                                    "value" : 1
                                   }
                                 },
-                                "reference" : "98ad083a-0c9a-4187-a8e3-82a68b02b894",
+                                "reference" : "d685ec56-8cbd-4e13-b295-9b2035f1b0c2",
                                 "hasValidationError" : false,
                                 "id" : "pbInput",
                                 "description" : ""
@@ -558,7 +523,71 @@
                                   },
                                   "hidden" : {
                                     "type" : "expression",
-                                    "value" : "!pedidos_selected.estado"
+                                    "value" : "!reclamacao_selected.descricao"
+                                  },
+                                  "labelPosition" : {
+                                    "type" : "constant",
+                                    "value" : "top"
+                                  },
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "labelWidth" : {
+                                    "type" : "constant",
+                                    "value" : 1
+                                  },
+                                  "readOnly" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "label" : {
+                                    "type" : "interpolation",
+                                    "value" : "Descricao"
+                                  },
+                                  "placeholder" : {
+                                    "type" : "constant"
+                                  },
+                                  "type" : {
+                                    "type" : "constant",
+                                    "value" : "text"
+                                  },
+                                  "dimension" : {
+                                    "type" : "constant",
+                                    "value" : 12
+                                  },
+                                  "value" : {
+                                    "type" : "variable",
+                                    "value" : "reclamacao_selected.descricao"
+                                  },
+                                  "required" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  }
+                                },
+                                "reference" : "763ae382-9c3c-4b1a-aae6-1f5b4143d352",
+                                "hasValidationError" : false,
+                                "id" : "pbInput",
+                                "description" : ""
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "md" : 12,
+                                  "sm" : 12,
+                                  "xs" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "labelHidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "hidden" : {
+                                    "type" : "expression",
+                                    "value" : "!reclamacao_selected.estado"
                                   },
                                   "labelPosition" : {
                                     "type" : "constant",
@@ -593,14 +622,14 @@
                                   },
                                   "value" : {
                                     "type" : "variable",
-                                    "value" : "pedidos_selected.estado"
+                                    "value" : "reclamacao_selected.estado"
                                   },
                                   "required" : {
                                     "type" : "constant",
                                     "value" : false
                                   }
                                 },
-                                "reference" : "d9edc136-fd49-4a61-8e65-6822bdec7e4d",
+                                "reference" : "77716484-fe6c-4eb8-ba1a-afd2e7dc4497",
                                 "hasValidationError" : false,
                                 "id" : "pbInput",
                                 "description" : ""
@@ -622,7 +651,7 @@
                                   },
                                   "hidden" : {
                                     "type" : "expression",
-                                    "value" : "!pedidos_selected.dataInicio"
+                                    "value" : "!reclamacao_selected.dataInicio"
                                   },
                                   "inlineInput" : {
                                     "type" : "constant",
@@ -693,14 +722,14 @@
                                   },
                                   "value" : {
                                     "type" : "variable",
-                                    "value" : "pedidos_selected.dataInicio"
+                                    "value" : "reclamacao_selected.dataInicio"
                                   },
                                   "withTimeZone" : {
                                     "type" : "constant",
                                     "value" : false
                                   }
                                 },
-                                "reference" : "e65a04e1-362e-4738-8551-7bf613a89cd4",
+                                "reference" : "4c878f72-76a4-480e-818a-c50b112edce3",
                                 "hasValidationError" : false,
                                 "id" : "pbDateTimePicker",
                                 "description" : ""
@@ -722,7 +751,7 @@
                                   },
                                   "hidden" : {
                                     "type" : "expression",
-                                    "value" : "!pedidos_selected.dataFim"
+                                    "value" : "!reclamacao_selected.dataFim"
                                   },
                                   "inlineInput" : {
                                     "type" : "constant",
@@ -793,14 +822,14 @@
                                   },
                                   "value" : {
                                     "type" : "variable",
-                                    "value" : "pedidos_selected.dataFim"
+                                    "value" : "reclamacao_selected.dataFim"
                                   },
                                   "withTimeZone" : {
                                     "type" : "constant",
                                     "value" : false
                                   }
                                 },
-                                "reference" : "b9192016-a680-4133-8f12-e204333c4f4d",
+                                "reference" : "333f2358-6db4-43f0-ba91-09ca9cb05d65",
                                 "hasValidationError" : false,
                                 "id" : "pbDateTimePicker",
                                 "description" : ""
@@ -822,7 +851,7 @@
                                   },
                                   "hidden" : {
                                     "type" : "expression",
-                                    "value" : "!pedidos_selected.assunto"
+                                    "value" : "!reclamacao_selected.notaCredito"
                                   },
                                   "labelPosition" : {
                                     "type" : "constant",
@@ -842,14 +871,14 @@
                                   },
                                   "label" : {
                                     "type" : "interpolation",
-                                    "value" : "Assunto"
+                                    "value" : "Nota Credito"
                                   },
                                   "placeholder" : {
                                     "type" : "constant"
                                   },
                                   "type" : {
                                     "type" : "constant",
-                                    "value" : "text"
+                                    "value" : "number"
                                   },
                                   "dimension" : {
                                     "type" : "constant",
@@ -857,14 +886,14 @@
                                   },
                                   "value" : {
                                     "type" : "variable",
-                                    "value" : "pedidos_selected.assunto"
+                                    "value" : "reclamacao_selected.notaCredito"
                                   },
                                   "required" : {
                                     "type" : "constant",
                                     "value" : false
                                   }
                                 },
-                                "reference" : "4638da34-c29b-4835-b3c7-b946f9952697",
+                                "reference" : "d587038e-5df6-4da1-bcba-b1611a9f47f8",
                                 "hasValidationError" : false,
                                 "id" : "pbInput",
                                 "description" : ""
@@ -886,7 +915,7 @@
                                   },
                                   "hidden" : {
                                     "type" : "expression",
-                                    "value" : "!pedidos_selected.descricao"
+                                    "value" : "!reclamacao_selected.valorCredito"
                                   },
                                   "labelPosition" : {
                                     "type" : "constant",
@@ -906,14 +935,14 @@
                                   },
                                   "label" : {
                                     "type" : "interpolation",
-                                    "value" : "Descricao"
+                                    "value" : "Valor Credito"
                                   },
                                   "placeholder" : {
                                     "type" : "constant"
                                   },
                                   "type" : {
                                     "type" : "constant",
-                                    "value" : "text"
+                                    "value" : "number"
                                   },
                                   "dimension" : {
                                     "type" : "constant",
@@ -921,14 +950,14 @@
                                   },
                                   "value" : {
                                     "type" : "variable",
-                                    "value" : "pedidos_selected.descricao"
+                                    "value" : "reclamacao_selected.valorCredito"
                                   },
                                   "required" : {
                                     "type" : "constant",
                                     "value" : false
                                   }
                                 },
-                                "reference" : "d135c952-e64b-4ca1-aedc-42c4eaf491f0",
+                                "reference" : "6b3612f9-6123-4734-a363-70c7197b6a60",
                                 "hasValidationError" : false,
                                 "id" : "pbInput",
                                 "description" : ""
@@ -950,7 +979,7 @@
                                   },
                                   "hidden" : {
                                     "type" : "expression",
-                                    "value" : "!pedidos_selected.tecnico"
+                                    "value" : "!reclamacao_selected.origem"
                                   },
                                   "labelPosition" : {
                                     "type" : "constant",
@@ -970,7 +999,7 @@
                                   },
                                   "label" : {
                                     "type" : "interpolation",
-                                    "value" : "Tecnico"
+                                    "value" : "Origem"
                                   },
                                   "placeholder" : {
                                     "type" : "constant"
@@ -985,14 +1014,78 @@
                                   },
                                   "value" : {
                                     "type" : "variable",
-                                    "value" : "pedidos_selected.tecnico"
+                                    "value" : "reclamacao_selected.origem"
                                   },
                                   "required" : {
                                     "type" : "constant",
                                     "value" : false
                                   }
                                 },
-                                "reference" : "ee212fef-b9ac-4966-a51a-d29cde0322de",
+                                "reference" : "f89f6af6-3b36-40b1-9132-7417224f1ebc",
+                                "hasValidationError" : false,
+                                "id" : "pbInput",
+                                "description" : ""
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "md" : 12,
+                                  "sm" : 12,
+                                  "xs" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "labelHidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "hidden" : {
+                                    "type" : "expression",
+                                    "value" : "!reclamacao_selected.esclarecimento"
+                                  },
+                                  "labelPosition" : {
+                                    "type" : "constant",
+                                    "value" : "top"
+                                  },
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "labelWidth" : {
+                                    "type" : "constant",
+                                    "value" : 1
+                                  },
+                                  "readOnly" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "label" : {
+                                    "type" : "interpolation",
+                                    "value" : "Esclarecimento"
+                                  },
+                                  "placeholder" : {
+                                    "type" : "constant"
+                                  },
+                                  "type" : {
+                                    "type" : "constant",
+                                    "value" : "text"
+                                  },
+                                  "dimension" : {
+                                    "type" : "constant",
+                                    "value" : 12
+                                  },
+                                  "value" : {
+                                    "type" : "variable",
+                                    "value" : "reclamacao_selected.esclarecimento"
+                                  },
+                                  "required" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  }
+                                },
+                                "reference" : "6a27bd7a-be64-473d-814d-d83547253038",
                                 "hasValidationError" : false,
                                 "id" : "pbInput",
                                 "description" : ""
@@ -1018,10 +1111,10 @@
                                     "value" : ""
                                   }
                                 },
-                                "reference" : "e73665b3-cd53-47c0-9adc-87298bb940c7",
+                                "reference" : "d19381de-d446-44bc-be2f-f1b14de23468",
                                 "hasValidationError" : false,
                                 "id" : "pbContainer",
-                                "description" : "\"com.company.model.Cliente\" object from \"pedidos_cliente_selected.cliente\" variable",
+                                "description" : "\"com.company.model.Cliente\" object from \"reclamacao_cliente_selected.cliente\" variable",
                                 "rows" : [
                                   [
                                     {
@@ -1058,7 +1151,7 @@
                                           "value" : 12
                                         }
                                       },
-                                      "reference" : "a1cdf340-80bc-41c1-830d-c8acfd4b12f6",
+                                      "reference" : "a0ce91c6-b04d-426c-b0ab-86f85227d23a",
                                       "hasValidationError" : false,
                                       "id" : "pbTitle",
                                       "description" : ""
@@ -1091,7 +1184,7 @@
                                           "value" : 11
                                         }
                                       },
-                                      "reference" : "776b2d83-6f6e-4fb5-b602-2eaa909e0323",
+                                      "reference" : "ab3c5f99-ce44-47a8-94d4-c47eeb01d70c",
                                       "hasValidationError" : false,
                                       "id" : "pbContainer",
                                       "description" : "Display \"Cliente\" details when a line is selected in the table above",
@@ -1112,7 +1205,7 @@
                                               },
                                               "hidden" : {
                                                 "type" : "expression",
-                                                "value" : "!pedidos_cliente.id"
+                                                "value" : "!reclamacao_cliente.id"
                                               },
                                               "labelPosition" : {
                                                 "type" : "constant",
@@ -1147,14 +1240,32 @@
                                               },
                                               "value" : {
                                                 "type" : "variable",
-                                                "value" : "pedidos_cliente.id"
+                                                "value" : "reclamacao_cliente.id"
                                               },
                                               "required" : {
                                                 "type" : "constant",
                                                 "value" : false
+                                              },
+                                              "minLength" : {
+                                                "type" : "constant",
+                                                "value" : ""
+                                              },
+                                              "maxLength" : {
+                                                "type" : "constant",
+                                                "value" : ""
+                                              },
+                                              "min" : {
+                                                "type" : "constant"
+                                              },
+                                              "max" : {
+                                                "type" : "constant"
+                                              },
+                                              "step" : {
+                                                "type" : "constant",
+                                                "value" : 1
                                               }
                                             },
-                                            "reference" : "1fcf407d-b3ea-4787-83e9-d00488d5d928",
+                                            "reference" : "17ad513d-5c7c-4014-b8fb-275b9814f1c6",
                                             "hasValidationError" : false,
                                             "id" : "pbInput",
                                             "description" : ""
@@ -1176,7 +1287,7 @@
                                               },
                                               "hidden" : {
                                                 "type" : "expression",
-                                                "value" : "!pedidos_cliente.nome"
+                                                "value" : "!reclamacao_cliente.nome"
                                               },
                                               "labelPosition" : {
                                                 "type" : "constant",
@@ -1211,14 +1322,14 @@
                                               },
                                               "value" : {
                                                 "type" : "variable",
-                                                "value" : "pedidos_cliente.nome"
+                                                "value" : "reclamacao_cliente.nome"
                                               },
                                               "required" : {
                                                 "type" : "constant",
                                                 "value" : false
                                               }
                                             },
-                                            "reference" : "29f90570-5340-458c-8191-70a38ffeb700",
+                                            "reference" : "dcd5d4ef-cc1b-4530-9d9b-571b08730902",
                                             "hasValidationError" : false,
                                             "id" : "pbInput",
                                             "description" : ""
@@ -1240,7 +1351,7 @@
                                               },
                                               "hidden" : {
                                                 "type" : "expression",
-                                                "value" : "!pedidos_cliente.email"
+                                                "value" : "!reclamacao_cliente.email"
                                               },
                                               "labelPosition" : {
                                                 "type" : "constant",
@@ -1275,14 +1386,14 @@
                                               },
                                               "value" : {
                                                 "type" : "variable",
-                                                "value" : "pedidos_cliente.email"
+                                                "value" : "reclamacao_cliente.email"
                                               },
                                               "required" : {
                                                 "type" : "constant",
                                                 "value" : false
                                               }
                                             },
-                                            "reference" : "16edaf78-e39c-485d-9635-9aed9cfcd836",
+                                            "reference" : "a22ce275-3024-4337-9297-e1c2d7044bad",
                                             "hasValidationError" : false,
                                             "id" : "pbInput",
                                             "description" : ""
@@ -1304,7 +1415,7 @@
                                               },
                                               "hidden" : {
                                                 "type" : "expression",
-                                                "value" : "!pedidos_cliente.morada"
+                                                "value" : "!reclamacao_cliente.morada"
                                               },
                                               "labelPosition" : {
                                                 "type" : "constant",
@@ -1339,14 +1450,14 @@
                                               },
                                               "value" : {
                                                 "type" : "variable",
-                                                "value" : "pedidos_cliente.morada"
+                                                "value" : "reclamacao_cliente.morada"
                                               },
                                               "required" : {
                                                 "type" : "constant",
                                                 "value" : false
                                               }
                                             },
-                                            "reference" : "947b86c9-d6d1-47f8-9829-9b4946cea9a0",
+                                            "reference" : "30663d44-858c-4f30-b644-7b5f632d5f04",
                                             "hasValidationError" : false,
                                             "id" : "pbInput",
                                             "description" : ""
@@ -1368,7 +1479,7 @@
                                               },
                                               "hidden" : {
                                                 "type" : "expression",
-                                                "value" : "!pedidos_cliente.telefone"
+                                                "value" : "!reclamacao_cliente.telefone"
                                               },
                                               "labelPosition" : {
                                                 "type" : "constant",
@@ -1403,14 +1514,14 @@
                                               },
                                               "value" : {
                                                 "type" : "variable",
-                                                "value" : "pedidos_cliente.telefone"
+                                                "value" : "reclamacao_cliente.telefone"
                                               },
                                               "required" : {
                                                 "type" : "constant",
                                                 "value" : false
                                               }
                                             },
-                                            "reference" : "b39a8569-9605-4e9e-b8b1-ce36d0b4b5d2",
+                                            "reference" : "d1a5de6c-4a30-47d4-82f1-708fb944d77c",
                                             "hasValidationError" : false,
                                             "id" : "pbInput",
                                             "description" : ""
@@ -1432,7 +1543,7 @@
                                               },
                                               "hidden" : {
                                                 "type" : "expression",
-                                                "value" : "!pedidos_cliente.dataInicio"
+                                                "value" : "!reclamacao_cliente.dataInicio"
                                               },
                                               "inlineInput" : {
                                                 "type" : "constant",
@@ -1503,14 +1614,14 @@
                                               },
                                               "value" : {
                                                 "type" : "variable",
-                                                "value" : "pedidos_cliente.dataInicio"
+                                                "value" : "reclamacao_cliente.dataInicio"
                                               },
                                               "withTimeZone" : {
                                                 "type" : "constant",
                                                 "value" : false
                                               }
                                             },
-                                            "reference" : "23c8afa1-feae-40d3-bfcf-ddc6af0ac64d",
+                                            "reference" : "8b4b2a38-4ace-43b6-9cd2-19f71b005fc3",
                                             "hasValidationError" : false,
                                             "id" : "pbDateTimePicker",
                                             "description" : ""
@@ -1532,7 +1643,7 @@
                                               },
                                               "hidden" : {
                                                 "type" : "expression",
-                                                "value" : "!pedidos_cliente.contrato"
+                                                "value" : "!reclamacao_cliente.contrato"
                                               },
                                               "cssClasses" : {
                                                 "type" : "constant",
@@ -1552,10 +1663,10 @@
                                               },
                                               "value" : {
                                                 "type" : "variable",
-                                                "value" : "pedidos_cliente.contrato"
+                                                "value" : "reclamacao_cliente.contrato"
                                               }
                                             },
-                                            "reference" : "02bcfea2-6faa-4640-84f9-84458dc3f815",
+                                            "reference" : "56d06d9a-ef44-4e14-bd99-7f9355497103",
                                             "hasValidationError" : false,
                                             "id" : "pbCheckbox",
                                             "description" : ""
@@ -1577,7 +1688,7 @@
                                               },
                                               "hidden" : {
                                                 "type" : "expression",
-                                                "value" : "!pedidos_cliente.gestorConta"
+                                                "value" : "!reclamacao_cliente.gestorConta"
                                               },
                                               "labelPosition" : {
                                                 "type" : "constant",
@@ -1612,14 +1723,14 @@
                                               },
                                               "value" : {
                                                 "type" : "variable",
-                                                "value" : "pedidos_cliente.gestorConta"
+                                                "value" : "reclamacao_cliente.gestorConta"
                                               },
                                               "required" : {
                                                 "type" : "constant",
                                                 "value" : false
                                               }
                                             },
-                                            "reference" : "30ba8ed2-56b9-4eab-91b2-b96b8c4bcc5b",
+                                            "reference" : "3eaddd26-389e-44d7-83f5-ada211520916",
                                             "hasValidationError" : false,
                                             "id" : "pbInput",
                                             "description" : ""
@@ -1641,7 +1752,7 @@
                                               },
                                               "hidden" : {
                                                 "type" : "expression",
-                                                "value" : "!pedidos_cliente.valorContrato"
+                                                "value" : "!reclamacao_cliente.valorContrato"
                                               },
                                               "labelPosition" : {
                                                 "type" : "constant",
@@ -1676,14 +1787,766 @@
                                               },
                                               "value" : {
                                                 "type" : "variable",
-                                                "value" : "pedidos_cliente.valorContrato"
+                                                "value" : "reclamacao_cliente.valorContrato"
                                               },
                                               "required" : {
                                                 "type" : "constant",
                                                 "value" : false
                                               }
                                             },
-                                            "reference" : "9271a034-f7c1-4802-b701-6751c0edfc42",
+                                            "reference" : "18811e88-3e3b-4e89-9328-8473a6f9a04c",
+                                            "hasValidationError" : false,
+                                            "id" : "pbInput",
+                                            "description" : ""
+                                          }
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "container",
+                                "dimension" : {
+                                  "xs" : 12
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "repeatedCollection" : {
+                                    "type" : "variable",
+                                    "value" : ""
+                                  }
+                                },
+                                "reference" : "23c82815-669f-4c53-8cc2-5f590b9252f5",
+                                "hasValidationError" : false,
+                                "id" : "pbContainer",
+                                "description" : "\"com.company.model.Pedido\" object from \"reclamacao_pedido_selected.pedido\" variable",
+                                "rows" : [
+                                  [
+                                    {
+                                      "type" : "component",
+                                      "dimension" : {
+                                        "md" : 12,
+                                        "sm" : 12,
+                                        "xs" : 12,
+                                        "lg" : 12
+                                      },
+                                      "propertyValues" : {
+                                        "hidden" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "level" : {
+                                          "type" : "constant",
+                                          "value" : "Level 4"
+                                        },
+                                        "cssClasses" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "text" : {
+                                          "type" : "interpolation",
+                                          "value" : "Pedido"
+                                        },
+                                        "alignment" : {
+                                          "type" : "constant",
+                                          "value" : "left"
+                                        },
+                                        "dimension" : {
+                                          "type" : "constant",
+                                          "value" : 12
+                                        }
+                                      },
+                                      "reference" : "5717d343-24a3-4e51-939a-1d177d774430",
+                                      "hasValidationError" : false,
+                                      "id" : "pbTitle",
+                                      "description" : ""
+                                    }
+                                  ],
+                                  [
+                                    {
+                                      "type" : "container",
+                                      "dimension" : {
+                                        "md" : 12,
+                                        "sm" : 11,
+                                        "xs" : 11,
+                                        "lg" : 11
+                                      },
+                                      "propertyValues" : {
+                                        "repeatedCollection" : {
+                                          "type" : "variable",
+                                          "value" : ""
+                                        },
+                                        "hidden" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "cssClasses" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "dimension" : {
+                                          "type" : "constant",
+                                          "value" : 11
+                                        }
+                                      },
+                                      "reference" : "40890e1f-3cd9-4529-9552-b1834c934310",
+                                      "hasValidationError" : false,
+                                      "id" : "pbContainer",
+                                      "description" : "Display \"Pedido\" details when a line is selected in the table above",
+                                      "rows" : [
+                                        [
+                                          {
+                                            "type" : "component",
+                                            "dimension" : {
+                                              "md" : 12,
+                                              "sm" : 12,
+                                              "xs" : 12,
+                                              "lg" : 12
+                                            },
+                                            "propertyValues" : {
+                                              "labelHidden" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              },
+                                              "hidden" : {
+                                                "type" : "expression",
+                                                "value" : "!reclamacao_pedido.id"
+                                              },
+                                              "labelPosition" : {
+                                                "type" : "constant",
+                                                "value" : "top"
+                                              },
+                                              "cssClasses" : {
+                                                "type" : "constant",
+                                                "value" : ""
+                                              },
+                                              "labelWidth" : {
+                                                "type" : "constant",
+                                                "value" : 1
+                                              },
+                                              "readOnly" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "label" : {
+                                                "type" : "interpolation",
+                                                "value" : "Id"
+                                              },
+                                              "placeholder" : {
+                                                "type" : "constant"
+                                              },
+                                              "type" : {
+                                                "type" : "constant",
+                                                "value" : "text"
+                                              },
+                                              "dimension" : {
+                                                "type" : "constant",
+                                                "value" : 12
+                                              },
+                                              "value" : {
+                                                "type" : "variable",
+                                                "value" : "reclamacao_pedido.id"
+                                              },
+                                              "required" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              }
+                                            },
+                                            "reference" : "2fc94ffd-b8e4-4a08-ad6b-3a7333629069",
+                                            "hasValidationError" : false,
+                                            "id" : "pbInput",
+                                            "description" : ""
+                                          }
+                                        ],
+                                        [
+                                          {
+                                            "type" : "component",
+                                            "dimension" : {
+                                              "md" : 12,
+                                              "sm" : 12,
+                                              "xs" : 12,
+                                              "lg" : 12
+                                            },
+                                            "propertyValues" : {
+                                              "labelHidden" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              },
+                                              "hidden" : {
+                                                "type" : "expression",
+                                                "value" : "!reclamacao_pedido.administrativo"
+                                              },
+                                              "labelPosition" : {
+                                                "type" : "constant",
+                                                "value" : "top"
+                                              },
+                                              "cssClasses" : {
+                                                "type" : "constant",
+                                                "value" : ""
+                                              },
+                                              "labelWidth" : {
+                                                "type" : "constant",
+                                                "value" : 1
+                                              },
+                                              "readOnly" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "label" : {
+                                                "type" : "interpolation",
+                                                "value" : "Administrativo"
+                                              },
+                                              "placeholder" : {
+                                                "type" : "constant"
+                                              },
+                                              "type" : {
+                                                "type" : "constant",
+                                                "value" : "text"
+                                              },
+                                              "dimension" : {
+                                                "type" : "constant",
+                                                "value" : 12
+                                              },
+                                              "value" : {
+                                                "type" : "variable",
+                                                "value" : "reclamacao_pedido.administrativo"
+                                              },
+                                              "required" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              }
+                                            },
+                                            "reference" : "2de2b92d-5c00-41d6-894c-432dcf378ac8",
+                                            "hasValidationError" : false,
+                                            "id" : "pbInput",
+                                            "description" : ""
+                                          }
+                                        ],
+                                        [
+                                          {
+                                            "type" : "component",
+                                            "dimension" : {
+                                              "md" : 12,
+                                              "sm" : 12,
+                                              "xs" : 12,
+                                              "lg" : 12
+                                            },
+                                            "propertyValues" : {
+                                              "labelHidden" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              },
+                                              "hidden" : {
+                                                "type" : "expression",
+                                                "value" : "!reclamacao_pedido.gestorServico"
+                                              },
+                                              "labelPosition" : {
+                                                "type" : "constant",
+                                                "value" : "top"
+                                              },
+                                              "cssClasses" : {
+                                                "type" : "constant",
+                                                "value" : ""
+                                              },
+                                              "labelWidth" : {
+                                                "type" : "constant",
+                                                "value" : 1
+                                              },
+                                              "readOnly" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "label" : {
+                                                "type" : "interpolation",
+                                                "value" : "Gestor Servico"
+                                              },
+                                              "placeholder" : {
+                                                "type" : "constant"
+                                              },
+                                              "type" : {
+                                                "type" : "constant",
+                                                "value" : "text"
+                                              },
+                                              "dimension" : {
+                                                "type" : "constant",
+                                                "value" : 12
+                                              },
+                                              "value" : {
+                                                "type" : "variable",
+                                                "value" : "reclamacao_pedido.gestorServico"
+                                              },
+                                              "required" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              }
+                                            },
+                                            "reference" : "b82bc88f-5a6b-4999-a61c-f0e6fb4fcca6",
+                                            "hasValidationError" : false,
+                                            "id" : "pbInput",
+                                            "description" : ""
+                                          }
+                                        ],
+                                        [
+                                          {
+                                            "type" : "component",
+                                            "dimension" : {
+                                              "md" : 12,
+                                              "sm" : 12,
+                                              "xs" : 12,
+                                              "lg" : 12
+                                            },
+                                            "propertyValues" : {
+                                              "labelHidden" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              },
+                                              "hidden" : {
+                                                "type" : "expression",
+                                                "value" : "!reclamacao_pedido.estado"
+                                              },
+                                              "labelPosition" : {
+                                                "type" : "constant",
+                                                "value" : "top"
+                                              },
+                                              "cssClasses" : {
+                                                "type" : "constant",
+                                                "value" : ""
+                                              },
+                                              "labelWidth" : {
+                                                "type" : "constant",
+                                                "value" : 1
+                                              },
+                                              "readOnly" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "label" : {
+                                                "type" : "interpolation",
+                                                "value" : "Estado"
+                                              },
+                                              "placeholder" : {
+                                                "type" : "constant"
+                                              },
+                                              "type" : {
+                                                "type" : "constant",
+                                                "value" : "text"
+                                              },
+                                              "dimension" : {
+                                                "type" : "constant",
+                                                "value" : 12
+                                              },
+                                              "value" : {
+                                                "type" : "variable",
+                                                "value" : "reclamacao_pedido.estado"
+                                              },
+                                              "required" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              }
+                                            },
+                                            "reference" : "c8fcc2d2-4b1d-43bf-9a54-2620847f7b45",
+                                            "hasValidationError" : false,
+                                            "id" : "pbInput",
+                                            "description" : ""
+                                          }
+                                        ],
+                                        [
+                                          {
+                                            "type" : "component",
+                                            "dimension" : {
+                                              "md" : 12,
+                                              "sm" : 12,
+                                              "xs" : 12,
+                                              "lg" : 12
+                                            },
+                                            "propertyValues" : {
+                                              "showNow" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "hidden" : {
+                                                "type" : "expression",
+                                                "value" : "!reclamacao_pedido.dataInicio"
+                                              },
+                                              "inlineInput" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "dateFormat" : {
+                                                "type" : "constant",
+                                                "value" : "MM/dd/yyyy"
+                                              },
+                                              "cssClasses" : {
+                                                "type" : "constant",
+                                                "value" : ""
+                                              },
+                                              "labelWidth" : {
+                                                "type" : "constant",
+                                                "value" : 1
+                                              },
+                                              "readOnly" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "label" : {
+                                                "type" : "interpolation",
+                                                "value" : "Data Inicio"
+                                              },
+                                              "type" : {
+                                                "type" : "constant"
+                                              },
+                                              "required" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              },
+                                              "todayLabel" : {
+                                                "type" : "constant",
+                                                "value" : "Today"
+                                              },
+                                              "timePlaceholder" : {
+                                                "type" : "constant",
+                                                "value" : "Enter a time (h:mm:ss a)"
+                                              },
+                                              "labelHidden" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              },
+                                              "showToday" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "labelPosition" : {
+                                                "type" : "constant",
+                                                "value" : "top"
+                                              },
+                                              "timeFormat" : {
+                                                "type" : "constant",
+                                                "value" : "h:mm:ss a"
+                                              },
+                                              "placeholder" : {
+                                                "type" : "constant",
+                                                "value" : "Enter a date (mm/dd/yyyy)"
+                                              },
+                                              "nowLabel" : {
+                                                "type" : "constant",
+                                                "value" : "Now"
+                                              },
+                                              "dimension" : {
+                                                "type" : "constant",
+                                                "value" : 12
+                                              },
+                                              "value" : {
+                                                "type" : "variable",
+                                                "value" : "reclamacao_pedido.dataInicio"
+                                              },
+                                              "withTimeZone" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              }
+                                            },
+                                            "reference" : "e3a9dfc3-09b3-4746-b83a-7f2ce7b53fee",
+                                            "hasValidationError" : false,
+                                            "id" : "pbDateTimePicker",
+                                            "description" : ""
+                                          }
+                                        ],
+                                        [
+                                          {
+                                            "type" : "component",
+                                            "dimension" : {
+                                              "md" : 12,
+                                              "sm" : 12,
+                                              "xs" : 12,
+                                              "lg" : 12
+                                            },
+                                            "propertyValues" : {
+                                              "showNow" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "hidden" : {
+                                                "type" : "expression",
+                                                "value" : "!reclamacao_pedido.dataFim"
+                                              },
+                                              "inlineInput" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "dateFormat" : {
+                                                "type" : "constant",
+                                                "value" : "MM/dd/yyyy"
+                                              },
+                                              "cssClasses" : {
+                                                "type" : "constant",
+                                                "value" : ""
+                                              },
+                                              "labelWidth" : {
+                                                "type" : "constant",
+                                                "value" : 1
+                                              },
+                                              "readOnly" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "label" : {
+                                                "type" : "interpolation",
+                                                "value" : "Data Fim"
+                                              },
+                                              "type" : {
+                                                "type" : "constant"
+                                              },
+                                              "required" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              },
+                                              "todayLabel" : {
+                                                "type" : "constant",
+                                                "value" : "Today"
+                                              },
+                                              "timePlaceholder" : {
+                                                "type" : "constant",
+                                                "value" : "Enter a time (h:mm:ss a)"
+                                              },
+                                              "labelHidden" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              },
+                                              "showToday" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "labelPosition" : {
+                                                "type" : "constant",
+                                                "value" : "top"
+                                              },
+                                              "timeFormat" : {
+                                                "type" : "constant",
+                                                "value" : "h:mm:ss a"
+                                              },
+                                              "placeholder" : {
+                                                "type" : "constant",
+                                                "value" : "Enter a date (mm/dd/yyyy)"
+                                              },
+                                              "nowLabel" : {
+                                                "type" : "constant",
+                                                "value" : "Now"
+                                              },
+                                              "dimension" : {
+                                                "type" : "constant",
+                                                "value" : 12
+                                              },
+                                              "value" : {
+                                                "type" : "variable",
+                                                "value" : "reclamacao_pedido.dataFim"
+                                              },
+                                              "withTimeZone" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              }
+                                            },
+                                            "reference" : "e7ecd872-708d-415b-9d9e-a3b6fc76e51f",
+                                            "hasValidationError" : false,
+                                            "id" : "pbDateTimePicker",
+                                            "description" : ""
+                                          }
+                                        ],
+                                        [
+                                          {
+                                            "type" : "component",
+                                            "dimension" : {
+                                              "md" : 12,
+                                              "sm" : 12,
+                                              "xs" : 12,
+                                              "lg" : 12
+                                            },
+                                            "propertyValues" : {
+                                              "labelHidden" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              },
+                                              "hidden" : {
+                                                "type" : "expression",
+                                                "value" : "!reclamacao_pedido.assunto"
+                                              },
+                                              "labelPosition" : {
+                                                "type" : "constant",
+                                                "value" : "top"
+                                              },
+                                              "cssClasses" : {
+                                                "type" : "constant",
+                                                "value" : ""
+                                              },
+                                              "labelWidth" : {
+                                                "type" : "constant",
+                                                "value" : 1
+                                              },
+                                              "readOnly" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "label" : {
+                                                "type" : "interpolation",
+                                                "value" : "Assunto"
+                                              },
+                                              "placeholder" : {
+                                                "type" : "constant"
+                                              },
+                                              "type" : {
+                                                "type" : "constant",
+                                                "value" : "text"
+                                              },
+                                              "dimension" : {
+                                                "type" : "constant",
+                                                "value" : 12
+                                              },
+                                              "value" : {
+                                                "type" : "variable",
+                                                "value" : "reclamacao_pedido.assunto"
+                                              },
+                                              "required" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              }
+                                            },
+                                            "reference" : "cda8f3d0-69df-4e09-9182-70afd33e077e",
+                                            "hasValidationError" : false,
+                                            "id" : "pbInput",
+                                            "description" : ""
+                                          }
+                                        ],
+                                        [
+                                          {
+                                            "type" : "component",
+                                            "dimension" : {
+                                              "md" : 12,
+                                              "sm" : 12,
+                                              "xs" : 12,
+                                              "lg" : 12
+                                            },
+                                            "propertyValues" : {
+                                              "labelHidden" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              },
+                                              "hidden" : {
+                                                "type" : "expression",
+                                                "value" : "!reclamacao_pedido.descricao"
+                                              },
+                                              "labelPosition" : {
+                                                "type" : "constant",
+                                                "value" : "top"
+                                              },
+                                              "cssClasses" : {
+                                                "type" : "constant",
+                                                "value" : ""
+                                              },
+                                              "labelWidth" : {
+                                                "type" : "constant",
+                                                "value" : 1
+                                              },
+                                              "readOnly" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "label" : {
+                                                "type" : "interpolation",
+                                                "value" : "Descricao"
+                                              },
+                                              "placeholder" : {
+                                                "type" : "constant"
+                                              },
+                                              "type" : {
+                                                "type" : "constant",
+                                                "value" : "text"
+                                              },
+                                              "dimension" : {
+                                                "type" : "constant",
+                                                "value" : 12
+                                              },
+                                              "value" : {
+                                                "type" : "variable",
+                                                "value" : "reclamacao_pedido.descricao"
+                                              },
+                                              "required" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              }
+                                            },
+                                            "reference" : "ef16e8b3-c88a-40cc-b763-ce8b8a050c8f",
+                                            "hasValidationError" : false,
+                                            "id" : "pbInput",
+                                            "description" : ""
+                                          }
+                                        ],
+                                        [
+                                          {
+                                            "type" : "component",
+                                            "dimension" : {
+                                              "md" : 12,
+                                              "sm" : 12,
+                                              "xs" : 12,
+                                              "lg" : 12
+                                            },
+                                            "propertyValues" : {
+                                              "labelHidden" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              },
+                                              "hidden" : {
+                                                "type" : "expression",
+                                                "value" : "!reclamacao_pedido.tecnico"
+                                              },
+                                              "labelPosition" : {
+                                                "type" : "constant",
+                                                "value" : "top"
+                                              },
+                                              "cssClasses" : {
+                                                "type" : "constant",
+                                                "value" : ""
+                                              },
+                                              "labelWidth" : {
+                                                "type" : "constant",
+                                                "value" : 1
+                                              },
+                                              "readOnly" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "label" : {
+                                                "type" : "interpolation",
+                                                "value" : "Tecnico"
+                                              },
+                                              "placeholder" : {
+                                                "type" : "constant"
+                                              },
+                                              "type" : {
+                                                "type" : "constant",
+                                                "value" : "text"
+                                              },
+                                              "dimension" : {
+                                                "type" : "constant",
+                                                "value" : 12
+                                              },
+                                              "value" : {
+                                                "type" : "variable",
+                                                "value" : "reclamacao_pedido.tecnico"
+                                              },
+                                              "required" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              }
+                                            },
+                                            "reference" : "1c547a6f-e0d0-4be4-b813-431a8372a0af",
                                             "hasValidationError" : false,
                                             "id" : "pbInput",
                                             "description" : ""
@@ -1710,46 +2573,60 @@
   ],
   "assets" : [
     {
-      "id" : "d2c353ec-ee12-4427-9fc3-cb84e66dfdc4",
-      "name" : "localization.json",
-      "type" : "json",
+      "id" : "4e286e50-53df-4963-99df-704164109f23",
+      "name" : "style.css",
+      "type" : "css",
       "order" : 0,
       "external" : false
     },
     {
-      "id" : "bd3adef4-76e1-4ecb-9532-be675fd4c496",
-      "name" : "style.css",
-      "type" : "css",
+      "id" : "0379b1b7-bc14-4b6d-8229-8597749cbad9",
+      "name" : "localization.json",
+      "type" : "json",
       "order" : 0,
       "external" : false
     }
   ],
   "inactiveAssets" : [ ],
   "variables" : {
-    "pedidos" : {
+    "reclamacao" : {
       "type" : "businessdata",
       "value" : [
-        "{\"displayValue\":\"findPedidosAbertos [com.company.model.Pedido]\",\"businessObjectName\":\"Pedido\",\"query\":{\"name\":\"findPedidosAbertos\",\"displayName\":\"findPedidosAbertos\"},\"id\":\"com.company.model.Pedido\",\"filters\":[],\"pagination\":{\"p\":\"0\",\"c\":\"20\"}}"
+        "{\"displayValue\":\"findByEstado [com.company.model.Reclamacao]\",\"businessObjectName\":\"Reclamacao\",\"query\":{\"name\":\"findByEstado\",\"displayName\":\"findByEstado\"},\"id\":\"com.company.model.Reclamacao\",\"filters\":[{\"name\":\"estado\",\"type\":\"STRING\",\"collection\":false,\"value\":\"Open\"}],\"pagination\":{\"p\":\"0\",\"c\":\"20\"}}"
       ],
       "exposed" : false
     },
-    "pedidos_selected" : {
+    "reclamacao_cliente" : {
+      "type" : "url",
+      "value" : [
+        "{{reclamacao_selected|lazyRef:'cliente'}}"
+      ],
+      "exposed" : false
+    },
+    "reclamacao_pedido_cliente" : {
+      "type" : "url",
+      "value" : [
+        "{{reclamacao_pedido|lazyRef:'cliente'}}"
+      ],
+      "exposed" : false
+    },
+    "reclamacao_pedido" : {
+      "type" : "url",
+      "value" : [
+        "{{reclamacao_selected|lazyRef:'pedido'}}"
+      ],
+      "exposed" : false
+    },
+    "reclamacao_selected" : {
       "type" : "constant",
       "value" : [
         ""
       ],
       "exposed" : false
-    },
-    "pedidos_cliente" : {
-      "type" : "url",
-      "value" : [
-        "{{pedidos_selected|lazyRef:'cliente'}}"
-      ],
-      "exposed" : false
     }
   },
   "hasValidationError" : false,
-  "uuid" : "ca73ce24-e7eb-45f9-bf52-bb91b41b4a00",
+  "uuid" : "0493b02c-fe21-4795-8007-b9ba3b3e0545",
   "type" : "page",
   "description" : "Page generated with Bonita UI designer"
 }
